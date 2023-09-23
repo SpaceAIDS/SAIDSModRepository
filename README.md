@@ -8,8 +8,8 @@
 ## Contribution guide
 
 ### prerequsites:
-- (extremely recommended) github Desktop, GitExtentions, or something similar
-- knowing the layout of SE mod files
+- (extremely recommended) github Desktop, GitExtentions, or something similar.
+- knowing the layout of SE mod files.
 - enough space to download the entire git repo (~5gb)?
 
 ### Step 1:
