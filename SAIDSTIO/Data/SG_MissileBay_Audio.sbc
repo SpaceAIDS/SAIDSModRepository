@@ -1,0 +1,157 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Sounds>
+		<Sound>
+		  <Id>
+			<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>SGMissileBoom</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>2000</MaxDistance>
+            <PreventSynchronization>5</PreventSynchronization>
+            <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+            <DynamicMusicAmount>25</DynamicMusicAmount>
+            <DistantSounds>
+                <DistantSound Distance="250" Sound="WepExplDistA" />
+                <DistantSound Distance="500" Sound="WepExplDistB" />
+                <DistantSound Distance="1000" Sound="WepExplDistC" />
+            </DistantSounds>
+            <Volume>1</Volume>
+            <VolumeVariation>0.1</VolumeVariation>
+            <PitchVariation>53.62818</PitchVariation>
+            <Waves>
+                <Wave Type="D2">
+                    <Start>Audio\ArcWepSmallMissileExplShip2d01.xwm</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\ArcWepSmallMissileExplShip3d05.xwm</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\ArcWepSmallMissileExplShip3d04.xwm</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\ArcWepSmallMissileExplShip3d03.xwm</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\ArcWepSmallMissileExplShip3d02.xwm</Start>
+                </Wave>
+                <Wave Type="D3">
+                    <Start>Audio\ArcWepSmallMissileExplShip3d01.xwm</Start>
+                </Wave>
+                <Wave Type="D2">
+                    <Start>Audio\ArcWepSmallMissileExplShip2d02.xwm</Start>
+                </Wave>
+                <Wave Type="D2">
+                    <Start>Audio\ArcWepSmallMissileExplShip2d03.xwm</Start>
+                </Wave>
+                <Wave Type="D2">
+                    <Start>Audio\ArcWepSmallMissileExplShip2d04.xwm</Start>
+                </Wave>
+                <Wave Type="D2">
+                    <Start>Audio\ArcWepSmallMissileExplShip2d05.xwm</Start>
+                </Wave>
+            </Waves>
+        </Sound>
+		<Sound>
+			<Id>
+				<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+				<SubtypeId>TorpLaunch-2</SubtypeId>
+			</Id>
+			<Category>SHOT</Category>
+			<MaxDistance>350</MaxDistance>
+			<PreventSynchronization>5</PreventSynchronization>
+			<DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+			<DynamicMusicAmount>5</DynamicMusicAmount>
+			<Volume>0.7</Volume>
+			<VolumeVariation>0.1</VolumeVariation>
+            <PitchVariation>53.62818</PitchVariation>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D3">
+					<Start>Audio\TorpLaunch-2.wav</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+				<SubtypeId>TorpLaunch</SubtypeId>
+			</Id>
+			<Category>SHOT</Category>
+			<MaxDistance>2000</MaxDistance>
+			<DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+			<DynamicMusicAmount>5</DynamicMusicAmount>
+			<Volume>1</Volume>
+			<VolumeVariation>0.1</VolumeVariation>
+            <PitchVariation>53.62818</PitchVariation>
+			<PreventSynchronization>5</PreventSynchronization>
+			  <DistantSounds>
+              <DistantSound DistanceCrossfade="200" Distance="800" Sound="TorpLaunch-2" />
+          </DistantSounds>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D3">
+					<Start>Audio\TorpLaunch.wav</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+				<SubtypeId>emp_hit</SubtypeId>
+			</Id>
+			<Category>SHOT</Category>
+			<MaxDistance>400</MaxDistance>
+			<PreventSynchronization>0</PreventSynchronization>
+			<DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+			<DynamicMusicAmount>5</DynamicMusicAmount>
+			<Volume>2</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D3">
+					<Start>Audio\emp_hit.wav</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+				<SubtypeId>SonicBoom</SubtypeId>
+			</Id>
+			<Category>SHOT</Category>
+			<MaxDistance>2000</MaxDistance>
+			<PreventSynchronization>0</PreventSynchronization>
+			<DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+			<DynamicMusicAmount>5</DynamicMusicAmount>
+			<Volume>1</Volume>
+			<DistantSounds>
+              <DistantSound DistanceCrossfade="200" Distance="800" Sound="SonicBoom-2" />
+          </DistantSounds>
+			  <SoundLimit>2</SoundLimit>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D3">
+					<Start>Audio\SonicBoom.wav</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+				<SubtypeId>SonicBoom-2</SubtypeId>
+			</Id>
+			<Category>SHOT</Category>
+			<MaxDistance>2000</MaxDistance>
+			<PreventSynchronization>0</PreventSynchronization>
+			<DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+			<DynamicMusicAmount>5</DynamicMusicAmount>
+			<Volume>0.5</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D3">
+					<Start>Audio\SonicBoom-2.wav</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+	</Sounds>
+</Definitions>

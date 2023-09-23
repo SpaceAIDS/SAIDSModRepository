@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CubeBlocks>
+
+		<!-- Large JDD -->
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+            <Id>
+                <TypeId>ConveyorSorter</TypeId>
+                <SubtypeId>SG_Vulcan_AutoCannon_Block</SubtypeId>
+            </Id>
+            <DisplayName>Vulcan AutoCannon Turret</DisplayName>
+            <Description>Cheap and effective general purpose weapon. Fires Vulcan .50 Cal Ammunition</Description>
+			<GuiVisible>true</GuiVisible>
+        
+            <Icon>Textures\GUI\Icons\SG_Vulcan_AutoCannon_Base.png</Icon>
+            
+            <CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="3" z="3"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\SG_Vulcan_AutoCannon_Base.mwm</Model>
+            <Components>
+				<Component Count="15" Subtype="SteelPlate"/>
+				<Component Count="5" Subtype="Construction"/>
+				<Component Count="2" Subtype="LargeTube" />
+                <Component Count="4" Subtype="SmallTube" />
+                <Component Count="3" Subtype="Motor" />
+				<Component Count="5" Subtype="MetalGrid" />
+                <Component Count="15" Subtype="Computer"/>
+				<Component Count="15" Subtype="Construction"/>
+				<Component Count="25" Subtype="SteelPlate"/>
+            </Components>
+            <CriticalComponent Index="0" Subtype="Computer"/>
+			<MirroringZ>Y</MirroringZ>
+            <MirroringY>Z</MirroringY>
+            <MountPoints>
+				<MountPoint Side="Bottom" StartX="1.00" StartY="1.00" EndX="2.00" EndY="2.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.30" File="Models\SG_Vulcan_AutoCannon_Base_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.60" File="Models\SG_Vulcan_AutoCannon_Base_BS2.mwm"/>
+				<Model BuildPercentUpperBound="0.90" File="Models\SG_Vulcan_AutoCannon_Base_BS3.mwm"/>
+			</BuildProgressModels>
+            <BuildTimeSeconds>25</BuildTimeSeconds>
+            <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+			<ResourceSinkGroup>Defense</ResourceSinkGroup>
+			<RequiredPowerInput>0.00002</RequiredPowerInput>
+            <PCU>800</PCU>
+            <IsAirTight>true</IsAirTight>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

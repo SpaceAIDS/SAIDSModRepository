@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Sounds>
+		<Sound>
+		  <Id>
+			<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+                <SubtypeId>PDCBrrt</SubtypeId>
+            </Id>
+            <Category>SHOT</Category>
+            <MaxDistance>2500</MaxDistance>
+            <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+            <DynamicMusicAmount>25</DynamicMusicAmount>
+			<PreventSynchronization>3</PreventSynchronization>
+            <Volume>0.7</Volume>
+			<DistantSounds>
+              <DistantSound DistanceCrossfade="200" Distance="800" Sound="PDCBrrtDis" />
+			  </DistantSounds>
+            <VolumeVariation>0.1</VolumeVariation>
+			<Loopable>true</Loopable>
+            <Waves>
+                <Wave Type="D3">
+                    <Start>Audio\BrrtBassStartPDC.wav</Start>
+                    <Loop>Audio\BrrtBassLoopPDC.wav</Loop>
+                    <End>Audio\BrrtBassEndPDC.wav</End>
+                </Wave>
+            </Waves>
+        </Sound>
+      <Sound>
+          <Id>
+              <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+              <SubtypeId>PDCBrrtDis</SubtypeId>
+          </Id>
+          <Category>SHOT</Category>
+          <MaxDistance>2500</MaxDistance>
+		  <Loopable>true</Loopable>
+          <Volume>0.4</Volume>
+          <Waves>
+              <Wave Type="D3">
+                    <Start>Audio\BrrtBassStartDisPDC.wav</Start>
+                    <Loop>Audio\BrrtBassLoopDisPDC.wav</Loop>
+                    <End>Audio\BrrtBassEndDisPDC.wav</End>
+                </Wave>
+			</Waves>
+		</Sound>
+	</Sounds>
+</Definitions>

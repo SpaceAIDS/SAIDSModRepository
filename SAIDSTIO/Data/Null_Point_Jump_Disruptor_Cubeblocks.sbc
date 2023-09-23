@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CubeBlocks>
+
+		<!-- Large JDD -->
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+            <Id>
+                <TypeId>ConveyorSorter</TypeId>
+                <SubtypeId>Null_Point_Jump_Disruptor_Large</SubtypeId>
+            </Id>
+            <DisplayName>Large Null-Point Jump Disrupter</DisplayName>
+            <Description>Disables jump drives on contact for set time (even mid jump). Stacks up to 5 times. Projectile bypasses shields and requires a charge up before fire.</Description>
+			<GuiVisible>true</GuiVisible>
+            <Icon>Textures\GUI\Icons\mk2.png</Icon>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="2" y="3" z="6"/>
+            <ModelOffset x="0" y="0" z="0"/>
+            <Model>Models\JDDUpdatedtest.mwm</Model>
+            <Components>
+				<Component Count="250" Subtype="SteelPlate"/>
+				<Component Count="300" Subtype="Construction"/>
+				<Component Count="80" Subtype="LargeTube" />
+				<Component Count="160" Subtype="MetalGrid" />
+				<Component Count="50" Subtype="GravityGenerator" />
+				<Component Count="500" Subtype="Superconductor" />
+                <Component Count="300" Subtype="Computer"/>
+				<Component Count="150" Subtype="Construction"/>
+				<Component Count="500" Subtype="SteelPlate"/>
+            </Components>
+            <CriticalComponent Index="0" Subtype="Superconductor"/>
+			<MirroringZ>Y</MirroringZ>
+            <MirroringY>Z</MirroringY>
+            <MountPoints>
+				<MountPoint Side="Top" StartX="0" StartY="0" EndX="2" EndY="2"/>
+				<MountPoint Side="Bottom" StartX="0" StartY="4" EndX="2" EndY="6"/>
+			</MountPoints>
+            <BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\JDDUpdatedtest_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.56" File="Models\JDDUpdatedtest_BS2.mwm"/>
+				<Model BuildPercentUpperBound="0.76" File="Models\JDDUpdatedtest_BS3.mwm"/>
+			</BuildProgressModels>
+            <BuildTimeSeconds>150</BuildTimeSeconds>
+            <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <WeaponDefinitionId Subtype="Null_Point_Jump_Disruptor" />
+			<ResourceSinkGroup>Defense</ResourceSinkGroup>
+			<RequiredPowerInput>0.00002</RequiredPowerInput>
+            <PCU>800</PCU>
+            <IsAirTight>true</IsAirTight>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

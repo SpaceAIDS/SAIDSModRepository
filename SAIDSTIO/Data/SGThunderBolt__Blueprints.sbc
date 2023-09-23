@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>ThunderBoltGatlingGun_MagazineLarge</SubtypeId>
+      </Id>
+      <DisplayName>ThunderBolt GatlingGun Ammunition</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\ThunderBolt_Ammo.png</Icon>
+      <Prerequisites>
+        <Item Amount="53" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="26" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="6" TypeId="Ingot" SubtypeId="Magnesium" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="ThunderBoltGatlingGun_MagazineLarge" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+  </Blueprints>
+</Definitions>

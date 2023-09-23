@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CubeBlocks>
+
+		<!-- Large JDD -->
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+            <Id>
+                <TypeId>ConveyorSorter</TypeId>
+                <SubtypeId>SG_TankCannon_Block</SubtypeId>
+            </Id>
+            <DisplayName>M42 TankGun</DisplayName>
+            <Description>All round general purpose Heavy Weapon. Fires M42 Tank Round</Description>
+			<GuiVisible>true</GuiVisible>
+        
+            <Icon>Textures\GUI\Icons\SG_Tank_Cannon_Base.png</Icon>
+            
+            <CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="5" y="3" z="5"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\SG_Tank_Cannon_Base.mwm</Model>
+            <Components>
+				<Component Count="15" Subtype="SteelPlate"/>
+				<Component Count="5" Subtype="Construction"/>
+				<Component Count="5" Subtype="LargeTube" />
+                <Component Count="10" Subtype="Motor" />
+				<Component Count="10" Subtype="MetalGrid" />
+                <Component Count="25" Subtype="Computer"/>
+				<Component Count="50" Subtype="Construction"/>
+				<Component Count="100" Subtype="SteelPlate"/>
+            </Components>
+            <CriticalComponent Index="0" Subtype="Computer"/>
+            <MountPoints>
+				<MountPoint Side="Front" StartX="-2" StartY="0" EndX="5" EndY="1"/>
+				<MountPoint Side="Back" StartX="-2" StartY="0" EndX="5" EndY="1"/>
+				<MountPoint Side="Left" StartX="-2" StartY="0" EndX="5" EndY="1"/>
+				<MountPoint Side="Right" StartX="-2" StartY="0" EndX="5" EndY="1"/>
+				<MountPoint Side="Bottom" StartX="-2" StartY="0" EndX="5" EndY="5"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\SG_Tank_Cannon_Base_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\SG_Tank_Cannon_Base_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\SG_Tank_Cannon_Base_BS3.mwm"/>
+			</BuildProgressModels>
+            <BuildTimeSeconds>50</BuildTimeSeconds>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+			<MirroringZ>Y</MirroringZ>
+            <MirroringY>Z</MirroringY>
+			<ResourceSinkGroup>Defense</ResourceSinkGroup>
+			<RequiredPowerInput>0.00002</RequiredPowerInput>
+            <PCU>800</PCU>
+            <IsAirTight>true</IsAirTight>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

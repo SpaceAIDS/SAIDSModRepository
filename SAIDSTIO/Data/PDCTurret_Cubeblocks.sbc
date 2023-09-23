@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CubeBlocks>
+
+		<!-- Large JDD -->
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+            <Id>
+                <TypeId>ConveyorSorter</TypeId>
+                <SubtypeId>PDCTurret_Block</SubtypeId>
+            </Id>
+            <DisplayName>XMA-41 Guardian PDS</DisplayName>
+            <Description>Cheap and mostly reliable form of missile defense. Fires .50 cal ammunition</Description>
+			<GuiVisible>true</GuiVisible>
+            <Icon>Textures\GUI\Icons\Test.png</Icon>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="2" z="1"/>
+            <ModelOffset x="0" y="0" z="0"/>
+            <Model>Models\Main_Scene_PDCTurret.mwm</Model>
+            <Components>
+				<Component Count="50" Subtype="SteelPlate"/>
+				<Component Count="30" Subtype="Construction"/>
+				<Component Count="15" Subtype="LargeTube" />
+                <Component Count="30" Subtype="Motor" />
+				<Component Count="20" Subtype="MetalGrid" />
+                <Component Count="50" Subtype="Computer"/>
+				<Component Count="25" Subtype="Construction"/>
+				<Component Count="100" Subtype="SteelPlate"/>
+            </Components>
+            <CriticalComponent Index="0" Subtype="Computer"/>
+            <MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.50" EndX="1.00" EndY="1.50"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.50" EndX="1.00" EndY="1.50"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.50" EndX="1.00" EndY="1.50"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.50" EndX="1.00" EndY="1.50"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Main_Scene_PDCTurret_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Main_Scene_PDCTurret_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Main_Scene_PDCTurret_BS3.mwm"/>
+			</BuildProgressModels>
+            <BuildTimeSeconds>75</BuildTimeSeconds>
+            <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <MirroringY>Z</MirroringY>
+			<ResourceSinkGroup>Defense</ResourceSinkGroup>
+			<RequiredPowerInput>0.00002</RequiredPowerInput>
+            <PCU>800</PCU>
+            <IsAirTight>true</IsAirTight>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

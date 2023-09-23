@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>SG_Vulcan_AutoCannon_Base</SubtypeId>
+			</Id>
+			<DisplayName>DisplayName_SG_Vulcan_AutoCannon_Base</DisplayName>
+			<Description>Description_SG_Vulcan_AutoCannon_Base</Description>
+			<Icon>Textures\GUI\Icons\AstronautBackpack.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="3" y="3" z="3"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\SG_Vulcan_AutoCannon_Base.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="10"/>
+			</Components>
+			<CriticalComponent Subtype="SteelPlate" Index="0"/>
+			<MountPoints>
+				<MountPoint Side="Bottom" StartX="1.00" StartY="1.00" EndX="2.00" EndY="2.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\SG_Vulcan_AutoCannon_Base_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\SG_Vulcan_AutoCannon_Base_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\SG_Vulcan_AutoCannon_Base_BS3.mwm"/>
+			</BuildProgressModels>
+			<BlockPairName>SG_Vulcan_AutoCannon_Base</BlockPairName>
+		</Definition>
+	</CubeBlocks>
+</Definitions>

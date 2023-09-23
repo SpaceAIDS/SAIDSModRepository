@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <AmmoMagazines>    
+        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>SG_Vulcan_AutoCannon_MagazineLarge</SubtypeId>
+            </Id>
+            <DisplayName>.50 Cal ammunition</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\Vulcan_AutoCannon_Ammo.png</Icon>
+            <Size>
+                <X>0.2</X>
+                <Y>0.2</Y>
+                <Z>0.2</Z>
+            </Size>
+            <Mass>35</Mass>
+            <Volume>30</Volume>
+            <Model>Models\Ammo\Vulcan_AutoCannon_Ammo.mwm</Model>
+            <PhysicalMaterial>Ammo</PhysicalMaterial>
+            <Capacity>150</Capacity>
+            <AmmoDefinitionId Subtype="SG_Vulcan_AutoCannon_Ammo" />
+        </AmmoMagazine>
+    </AmmoMagazines>
+</Definitions>

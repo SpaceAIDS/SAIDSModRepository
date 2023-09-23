@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+			<Id>
+				<TypeId>LargeMissileTurret</TypeId>
+				<SubtypeId>TestEWAR_One</SubtypeId>
+			</Id>
+			<DisplayName>EC-200 Light EWAR Projector</DisplayName>
+			<Description>The EC-200 is a small, but effective, EWAR device capable of temporarily disabling a vessel's drives. Long cooldown time. Range of 2.5KM.</Description>
+			<Icon>Textures\GUI\Icons\Cubes\Gen_Radar_Base.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\Cubes\large\Gen_Radar_Base.mwm</Model>
+			<Components>
+        <Component Subtype="SteelPlate" Count="500" />
+        <Component Subtype="Construction" Count="200" />
+        <Component Subtype="MetalGrid" Count="110" />
+        <Component Subtype="LargeTube" Count="48" />
+        <Component Subtype="SmallTube" Count="80" />	
+        <Component Subtype="Motor" Count="80" />
+        <Component Subtype="Computer" Count="100" />
+        <Component Subtype="MetalGrid" Count="100" />
+		 <Component Subtype="SteelPlate" Count="2000" />		
+        
+      </Components>
+			<CriticalComponent Subtype="Computer" Index="0"/>
+			<BlockPairName>Gen_Radar_Base</BlockPairName>
+			<WeaponDefinitionId Subtype="StasisGrappler" /> 	  	  
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <InventoryMaxVolume>0.144</InventoryMaxVolume>
+	   <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>200</PCU>      
+      <TargetingGroups>
+		<string>Weapons</string>
+      </TargetingGroups>      
+		</Definition>
+	</CubeBlocks>
+</Definitions>

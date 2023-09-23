@@ -1,0 +1,104 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Sounds>
+		<Sound>
+		  <Id>
+			<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+			<SubtypeId>TorpFlyBy</SubtypeId>
+		  </Id>
+		  <Category>SHOT</Category>
+		  <MaxDistance>350</MaxDistance>
+		  <PreventSynchronization>1</PreventSynchronization>
+		  <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+		  <DynamicMusicAmount>5</DynamicMusicAmount>
+		  <Volume>0.7</Volume>
+		  <SoundLimit>6</SoundLimit>
+		  <Loopable>false</Loopable>
+		  <Waves>
+			<Wave Type="D3">
+			  <Start>Audio\TorpFlyBy.wav</Start>
+			</Wave>
+		  </Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+				<SubtypeId>SGMissileImpact</SubtypeId>
+			</Id>
+			<Category>SHOT</Category>
+			<MaxDistance>2000</MaxDistance>
+			<PreventSynchronization>0</PreventSynchronization>
+			<DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+			<DynamicMusicAmount>5</DynamicMusicAmount>
+			<Volume>0.5</Volume>
+			<DistantSounds>
+              <DistantSound DistanceCrossfade="200" Distance="800" Sound="SGMissileImpact-2" />
+          </DistantSounds>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D3">
+					<Start>Audio\SGMissileImpact.wav</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+		  <Id>
+			<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+			<SubtypeId>SGMissileImpact-2</SubtypeId>
+		  </Id>
+		  <Category>SHOT</Category>
+		  <MaxDistance>2000</MaxDistance>
+		  <PreventSynchronization>1</PreventSynchronization>
+		  <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+		  <DynamicMusicAmount>5</DynamicMusicAmount>
+		  <Volume>0.7</Volume>
+		  <SoundLimit>6</SoundLimit>
+		  <Loopable>false</Loopable>
+		  <Waves>
+			<Wave Type="D3">
+			  <Start>Audio\SGMissileImpact-2.wav</Start>
+			</Wave>
+		  </Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+				<SubtypeId>Tank</SubtypeId>
+			</Id>
+			<Category>SHOT</Category>
+			<MaxDistance>2000</MaxDistance>
+			<PreventSynchronization>0</PreventSynchronization>
+			<DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+			<DynamicMusicAmount>5</DynamicMusicAmount>
+			<Volume>1</Volume>
+			<DistantSounds>
+              <DistantSound DistanceCrossfade="200" Distance="800" Sound="Tank-2" />
+          </DistantSounds>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D3">
+					<Start>Audio\Tank.wav</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+		  <Id>
+			<TypeId>MyObjectBuilder_AudioDefinition</TypeId>
+			<SubtypeId>Tank-2</SubtypeId>
+		  </Id>
+		  <Category>SHOT</Category>
+		  <MaxDistance>2000</MaxDistance>
+		  <PreventSynchronization>1</PreventSynchronization>
+		  <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
+		  <DynamicMusicAmount>5</DynamicMusicAmount>
+		  <Volume>0.7</Volume>
+		  <SoundLimit>6</SoundLimit>
+		  <Loopable>false</Loopable>
+		  <Waves>
+			<Wave Type="D3">
+			  <Start>Audio\Tank-2.wav</Start>
+			</Wave>
+		  </Waves>
+		</Sound>
+	</Sounds>
+</Definitions>

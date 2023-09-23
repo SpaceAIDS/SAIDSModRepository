@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SG_TankCannon_MagazineLarge</SubtypeId>
+      </Id>
+      <DisplayName>M42 Tank Round</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\SG_Tank_Cannon_Ammo.png</Icon>
+      <Prerequisites>
+        <Item Amount="35" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="25" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="9" TypeId="Ingot" SubtypeId="Silicon" />
+        <Item Amount="13" TypeId="Ingot" SubtypeId="Cobalt" />
+        <Item Amount="5" TypeId="Ingot" SubtypeId="Magnesium" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="SG_TankCannon_MagazineLarge" />
+      <BaseProductionTimeInSeconds>10</BaseProductionTimeInSeconds>
+    </Blueprint>
+  </Blueprints>
+</Definitions>
