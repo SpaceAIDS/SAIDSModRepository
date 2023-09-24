@@ -9,7 +9,7 @@
       </Id>
       <DisplayName>Frigate Core</DisplayName>
       <Icon>Textures\admincore.png</Icon>
-      <Description>The Ship Core block is required for Light grids.</Description>
+      <Description>This Ship Core block is required for all Frigate grids.</Description>
       <CubeSize>Large</CubeSize>
       <GuiVisible>true</GuiVisible>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -60,7 +60,7 @@
       </Id>
       <DisplayName>Destroyer Core</DisplayName>
       <Icon>Textures\admincore.png</Icon>
-      <Description>The Ship Core block is required for Light grids.</Description>
+      <Description>This Ship Core block is required for all Destroyer grids.</Description>
       <CubeSize>Large</CubeSize>
       <GuiVisible>true</GuiVisible>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -111,7 +111,7 @@
       </Id>
       <DisplayName>Cruiser Core</DisplayName>
       <Icon>Textures\admincore.png</Icon>
-      <Description>The Ship Core block is required for all Medium grids.</Description>
+      <Description>This Ship Core block is required for all Cruiser grids.</Description>
       <CubeSize>Large</CubeSize>
       <GuiVisible>true</GuiVisible>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -162,7 +162,7 @@
       </Id>
       <DisplayName>Battlecruiser Core</DisplayName>
       <Icon>Textures\admincore.png</Icon>
-      <Description>The Ship Core block is required for all Heavy grids.</Description>
+      <Description>This Ship Core block is required for all Battlecruiser grids.</Description>
       <CubeSize>Large</CubeSize>
       <GuiVisible>true</GuiVisible>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -213,7 +213,7 @@
       </Id>
       <DisplayName>Battleship Core</DisplayName>
       <Icon>Textures\admincore.png</Icon>
-      <Description>The Ship Core block is required for all Battleship grids.</Description>
+      <Description>This Ship Core block is required for all Battleship grids.</Description>
       <CubeSize>Large</CubeSize>
       <GuiVisible>true</GuiVisible>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -370,7 +370,7 @@
       </Id>
       <DisplayName>Fighter Core</DisplayName>
       <Icon>Textures\admincore.png</Icon>
-      <Description>The Ship Core block is required for Light grids.</Description>
+      <Description>this Ship Core block is required for all Fighter grids.</Description>
       <CubeSize>Small</CubeSize>
       <GuiVisible>true</GuiVisible>
       <BlockTopology>TriangleMesh</BlockTopology>
@@ -415,7 +415,7 @@
       </Id>
       <DisplayName>Drone Core</DisplayName>
       <Icon>Textures\admincore.png</Icon>
-      <Description>The Ship Core block is required for Light grids.</Description>
+      <Description>This Ship Core block is required for Drone grids.</Description>
       <CubeSize>Small</CubeSize>
       <GuiVisible>true</GuiVisible>
       <BlockTopology>TriangleMesh</BlockTopology>
