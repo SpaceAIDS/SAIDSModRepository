@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+			<Id>
+				<TypeId>LargeMissileTurret</TypeId>
+				<SubtypeId>LightMissileLauncher</SubtypeId>
+			</Id>
+			<DisplayName>Light Missile Launcher</DisplayName>
+			<Description>A mid-range weapon, the LML is meant to engage smaller, high-maneuverability targets. Max range of 3.5KM.</Description>
+			<Icon>Textures\GUI\Icons\LightMissileLauncher.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="3" y="3" z="3"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\Cubes\large\LightMissileLauncher.mwm</Model>
+			<Components>
+        <Component Subtype="SteelPlate" Count="25000" />
+        <Component Subtype="Construction" Count="1000" />
+        <Component Subtype="MetalGrid" Count="4500" />
+        <Component Subtype="LargeTube" Count="48" />
+        <Component Subtype="SmallTube" Count="80" />	
+        <Component Subtype="Motor" Count="800" />
+        <Component Subtype="Computer" Count="1250" />
+        <Component Subtype="MetalGrid" Count="100" />
+		 <Component Subtype="SteelPlate" Count="12500" />		
+        
+      </Components>
+			<CriticalComponent Subtype="Computer" Index="0"/>
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.11" EndX="3.00" EndY="0.87"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.11" EndX="3.00" EndY="0.87"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.11" EndX="3.00" EndY="0.87"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.11" EndX="3.00" EndY="0.87"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="3.00" EndY="3.00"/>
+			</MountPoints>
+			<BlockPairName>LightMissileLauncher</BlockPairName>
+			<WeaponDefinitionId Subtype="LML1" /> 	  	  
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <InventoryMaxVolume>0.144</InventoryMaxVolume>
+	   <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>200</PCU>      
+      <TargetingGroups>
+		<string>Weapons</string>
+      </TargetingGroups>      
+		</Definition>
+	</CubeBlocks>
+</Definitions>

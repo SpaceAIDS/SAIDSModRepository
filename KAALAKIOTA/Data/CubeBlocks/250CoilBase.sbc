@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+			<Id>
+				<TypeId>LargeMissileTurret</TypeId>
+				<SubtypeId>Coil250</SubtypeId>
+			</Id>
+			<DisplayName>Dual 250mm Coilgun</DisplayName>
+			<Description>Cruiser-sized large barrel turret. Railguns use magnetic rails to fire solid chunks of matter at hypersonic speed. The accurate range of railguns is very good, but due to technical limitations it cannot use onboard guidance. Maximum range of 6.5KM.</Description>
+			<Icon>Textures\GUI\Icons\250CoilBase.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="3" y="2" z="3"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\Cubes\large\250CoilBase.mwm</Model>
+			<Components>
+        <Component Subtype="SteelPlate" Count="500" />
+        <Component Subtype="Construction" Count="200" />
+        <Component Subtype="MetalGrid" Count="110" />
+        <Component Subtype="LargeTube" Count="48" />
+        <Component Subtype="SmallTube" Count="80" />	
+        <Component Subtype="Motor" Count="80" />
+        <Component Subtype="Computer" Count="100" />
+        <Component Subtype="MetalGrid" Count="100" />
+		 <Component Subtype="SteelPlate" Count="2000" />		
+        
+      </Components>
+			<CriticalComponent Subtype="Computer" Index="0"/>
+			<MountPoints>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="3.00" EndY="3.00"/>
+			</MountPoints>
+			<BlockPairName>Coil250</BlockPairName>
+			<WeaponDefinitionId Subtype="Coil1" /> 	  	  
+      <ResourceSinkGroup>Defense</ResourceSinkGroup>
+      <InventoryMaxVolume>0.144</InventoryMaxVolume>
+	   <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
+      <DestroySound>WepSmallWarheadExpl</DestroySound>
+      <PCU>200</PCU>      
+      <TargetingGroups>
+		<string>Weapons</string>
+      </TargetingGroups>      
+		</Definition>
+	</CubeBlocks>
+</Definitions>

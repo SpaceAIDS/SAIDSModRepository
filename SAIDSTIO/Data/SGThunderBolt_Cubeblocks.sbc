@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CubeBlocks>
+
+		<!-- Large JDD -->
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+            <Id>
+                <TypeId>ConveyorSorter</TypeId>
+                <SubtypeId>ThunderBoltGatlingGun_Block</SubtypeId>
+            </Id>
+            <DisplayName>M1-ThunderBolt-Gatling Gun</DisplayName>
+            <Description>Fixed Gatling Gun that excels in deleting armor. Very Effective against Small Grids and somewhat effective against Large Grid light armor. Fires .50 Cal ammunition.</Description>
+			<GuiVisible>true</GuiVisible>
+            <Icon>Textures\GUI\Icons\FixedBrrrt.png</Icon>
+            <CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="1" z="6"/>
+            <ModelOffset x="0" y="0" z="0"/>
+            <Model>Models\FixedBrrrt.mwm</Model>
+            <Components>
+				<Component Count="25" Subtype="SteelPlate"/>
+				<Component Count="30" Subtype="Construction"/>
+				<Component Count="40" Subtype="LargeTube" />
+                <Component Count="50" Subtype="Motor" />
+				<Component Count="50" Subtype="MetalGrid" />
+                <Component Count="25" Subtype="Computer"/>
+				<Component Count="30" Subtype="Construction"/>
+				<Component Count="25" Subtype="SteelPlate"/>
+            </Components>
+            <CriticalComponent Index="0" Subtype="Computer"/>
+            <MountPoints>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Left" StartX="4.00" StartY="0.00" EndX="6.00" EndY="1.00"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="2.00" EndY="1.00"/>
+				<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="1.00" EndY="2.00"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="4.00" EndX="1.00" EndY="6.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\FixedBrrrt_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\FixedBrrrt_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\FixedBrrrt_BS3.mwm"/>
+			</BuildProgressModels>
+            <BuildTimeSeconds>60</BuildTimeSeconds>
+            <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <MirroringZ>Y</MirroringZ>
+            <MirroringY>Z</MirroringY>
+			<ResourceSinkGroup>Defense</ResourceSinkGroup>
+			<RequiredPowerInput>0.00002</RequiredPowerInput>
+            <PCU>800</PCU>
+            <IsAirTight>true</IsAirTight>
+        </Definition>
+    </CubeBlocks>
+</Definitions>

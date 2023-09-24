@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SG_Vulcan_AutoCannon_MagazineLarge</SubtypeId>
+      </Id>
+      <DisplayName>.50 Cal ammunition</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\Vulcan_AutoCannon_Ammo.png</Icon>
+      <Prerequisites>
+        <Item Amount="18" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="13" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="3" TypeId="Ingot" SubtypeId="Magnesium" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="SG_Vulcan_AutoCannon_MagazineLarge" />
+      <BaseProductionTimeInSeconds>5</BaseProductionTimeInSeconds>
+    </Blueprint>
+  </Blueprints>
+</Definitions>

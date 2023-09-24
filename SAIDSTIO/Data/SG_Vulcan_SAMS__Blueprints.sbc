@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Blueprints>
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>SG_Vulcan_SAMS_MagazineLarge</SubtypeId>
+      </Id>
+      <DisplayName>SAMS Heat Seeking Missile</DisplayName>
+      <Icon>Textures\GUI\Icons\ammo\SG_Vulcan_Sam_Missiles.png</Icon>
+      <Prerequisites>
+        <Item Amount="25" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="15" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="11" TypeId="Ingot" SubtypeId="Silicon" />
+        <Item Amount="13" TypeId="Ingot" SubtypeId="Cobalt" />
+        <Item Amount="7" TypeId="Ingot" SubtypeId="Gold" />
+        <Item Amount="9" TypeId="Ingot" SubtypeId="Magnesium" />
+      </Prerequisites>
+      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="SG_Vulcan_SAMS_MagazineLarge" />
+      <BaseProductionTimeInSeconds>12</BaseProductionTimeInSeconds>
+    </Blueprint>
+  </Blueprints>
+</Definitions>

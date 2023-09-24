@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+        <Definition xsi:type="MyObjectBuilder_ShipDrillDefinition">
+            <Id>
+                <TypeId>Drill</TypeId>
+                <SubtypeId>Erebus_SmallBeamDrill</SubtypeId>
+            </Id>
+            <DisplayName>Small Beam Drill</DisplayName>
+            <Icon>Textures\GUI\Icons\Erebus\SmallBeamDrill.dds</Icon>
+            <Description>bzzzzzzzzzzzzzzzzzzt kchnwnhabnhsjbffjdsjfbnsdhjfnkchwwww</Description>
+            <CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="5" y="5" z="12"/>
+            <ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Erebus\Erebus_SmallBeamDrill.mwm</Model>
+			
+            <UseModelIntersection>true</UseModelIntersection>
+            <UsesDeformation>false</UsesDeformation>
+            <Components>
+                <Component Subtype="SteelPlate" Count="25" />
+                <Component Subtype="Construction" Count="20" />
+                <Component Subtype="LargeTube" Count="12" />
+                <Component Subtype="Motor" Count="5" />
+                <Component Subtype="Superconductor" Count="50" />
+                <Component Subtype="Computer" Count="5" />
+                <Component Subtype="SteelPlate" Count="25" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+			<MountPoints>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="5.00" EndY="5.00"/>
+				<MountPoint Side="Left" StartX="7.00" StartY="0.00" EndX="12.00" EndY="5.00"/>
+				<MountPoint Side="Left" StartX="3.00" StartY="1.50" EndX="7.00" EndY="3.50"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="5.00" EndY="5.00"/>
+				<MountPoint Side="Right" StartX="5.00" StartY="1.50" EndX="9.00" EndY="3.50"/>
+				<MountPoint Side="Top" StartX="0.00" StartY="0.00" EndX="5.00" EndY="5.00"/>
+				<MountPoint Side="Top" StartX="1.00" StartY="5.00" EndX="4.00" EndY="10.00"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="7.00" EndX="5.00" EndY="12.00"/>
+				<MountPoint Side="Bottom" StartX="1.00" StartY="2.00" EndX="4.00" EndY="7.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Erebus\Erebus_SmallBeamDrill_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Erebus\Erebus_SmallBeamDrill_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Erebus\Erebus_SmallBeamDrill_BS3.mwm"/>
+			</BuildProgressModels>
+			<BlockPairName>Erebus_BeamDrill</BlockPairName>
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>25</BuildTimeSeconds>
+
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <SensorRadius>2.5</SensorRadius>
+            <SensorOffset>5.5</SensorOffset>
+            <CutOutRadius>2.5</CutOutRadius>
+            <CutOutOffset>5.5</CutOutOffset>
+            <ParticleOffset>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>-17.5</Z>
+            </ParticleOffset>
+
+            <DeformationRatio>0.2</DeformationRatio>
+            <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+            <DamagedSound>ParticleHeavyMech</DamagedSound>
+            <PrimarySound>ToolShipDrillIdle</PrimarySound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>200</PCU>
+        </Definition>		
+		
+		
+	</CubeBlocks>
+</Definitions>

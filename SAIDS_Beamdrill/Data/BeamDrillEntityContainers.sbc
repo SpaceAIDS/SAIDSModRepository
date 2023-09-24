@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <EntityContainers>
+
+        <Container>
+            <Id>
+                <TypeId>Drill</TypeId>
+                <SubtypeId>Erebus_LargeBeamDrill</SubtypeId>
+            </Id>
+            <DefaultComponents>
+                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="LargeBeamDrillCargo" ForceCreate="true"/>
+            </DefaultComponents>
+        </Container>
+ 
+        <Container>
+            <Id>
+                <TypeId>Drill</TypeId>
+                <SubtypeId>Erebus_SmallBeamDrill</SubtypeId>
+            </Id>
+            <DefaultComponents>
+                <Component BuilderType="MyObjectBuilder_Inventory" SubtypeId="SmallBeamDrillCargo" ForceCreate="true"/>
+            </DefaultComponents>
+        </Container>
+
+
+		
+    </EntityContainers>
+</Definitions>

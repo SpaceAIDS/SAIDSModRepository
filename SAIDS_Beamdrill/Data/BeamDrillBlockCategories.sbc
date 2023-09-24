@@ -1,0 +1,57 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CategoryClasses>
+        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+            <Id>
+                <TypeId>GuiBlockCategoryDefinition</TypeId>
+                <SubtypeId/>
+            </Id>
+            <DisplayName>DisplayName_Category_LargeBlocks</DisplayName>
+            <Name>LargeBlocks</Name>
+            <StrictSearch>true</StrictSearch>
+            <ItemIds>
+                <string>Drill/Erebus_LargeBeamDrill</string>
+            </ItemIds>
+        </Category>
+        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+            <Id>
+                <TypeId>GuiBlockCategoryDefinition</TypeId>
+                <SubtypeId/>
+            </Id>
+            <DisplayName>DisplayName_Category_SmallBlocks</DisplayName>
+            <Name>SmallBlocks</Name>
+            <StrictSearch>true</StrictSearch>
+            <ItemIds>
+                <string>Drill/Erebus_SmallBeamDrill</string>
+            </ItemIds>
+        </Category>
+        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+            <Id>
+                <TypeId>GuiBlockCategoryDefinition</TypeId>
+                <SubtypeId/>
+            </Id>
+            <DisplayName>DisplayName_Category_ShipTools</DisplayName>
+            <Name>ShipTools</Name>
+            <SearchBlocks>false</SearchBlocks>
+            <IsShipCategory>true</IsShipCategory>
+            <IsBlockCategory>false</IsBlockCategory>
+            <IsToolCategory>true</IsToolCategory>
+            <ItemIds>
+                <string>Drill/Erebus_LargeBeamDrill</string>
+                <string>Drill/Erebus_SmallBeamDrill</string>
+            </ItemIds>
+        </Category>
+        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+            <Id>
+                <TypeId>GuiBlockCategoryDefinition</TypeId>
+                <SubtypeId/>
+            </Id>
+            <DisplayName>DisplayName_Category_ShipTools</DisplayName>
+            <Name>Tools</Name>
+            <ItemIds>
+                <string>Drill/Erebus_LargeBeamDrill</string>
+                <string>Drill/Erebus_SmallBeamDrill</string>
+            </ItemIds>
+        </Category>
+    </CategoryClasses>
+</Definitions>

@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CubeBlocks>
+
+		<!-- Large JDD -->
+        <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+            <Id>
+                <TypeId>ConveyorSorter</TypeId>
+                <SubtypeId>SG_Missile_Bay_Block</SubtypeId>
+            </Id>
+            <DisplayName>Archer Missile Launch Bay</DisplayName>
+            <Description>Fires T71-Archer Missiles. Able to carry 2 munitions in its bay.</Description>
+			<GuiVisible>true</GuiVisible>
+            <Icon>Textures\GUI\Icons\SG_Missile_Bay_MainScene.png</Icon>
+            <CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="2" y="1" z="4"/>
+            <ModelOffset x="0" y="0" z="0"/>
+            <Model>Models\SG_Missile_Bay_MainScene.mwm</Model>
+            <Components>
+				<Component Count="30" Subtype="SteelPlate"/>
+				<Component Count="20" Subtype="Construction"/>
+				<Component Count="15" Subtype="LargeTube" />
+                <Component Count="20" Subtype="Motor" />
+				<Component Count="10" Subtype="MetalGrid" />
+                <Component Count="50" Subtype="Computer"/>
+				<Component Count="35" Subtype="Construction"/>
+				<Component Count="50" Subtype="SteelPlate"/>
+            </Components>
+            <CriticalComponent Index="0" Subtype="Computer"/>
+            <MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="2.00" EndY="1.00"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="2.00" EndY="1.00"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="4.00" EndY="1.00"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="4.00" EndY="1.00"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="2.00" EndY="4.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\SG_Missile_Bay_MainScene_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\SG_Missile_Bay_MainScene_BS2.mwm"/>
+				<Model BuildPercentUpperBound="0.90" File="Models\SG_Missile_Bay_MainScene_BS3.mwm"/>
+			</BuildProgressModels>
+            <BuildTimeSeconds>80</BuildTimeSeconds>
+            <DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <MirroringZ>Y</MirroringZ>
+            <MirroringY>Z</MirroringY>
+			<ResourceSinkGroup>Defense</ResourceSinkGroup>
+			<RequiredPowerInput>0.00002</RequiredPowerInput>
+            <PCU>800</PCU>
+            <IsAirTight>true</IsAirTight>
+        </Definition>
+    </CubeBlocks>
+</Definitions>
