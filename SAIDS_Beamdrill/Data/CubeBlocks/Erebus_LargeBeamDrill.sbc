@@ -56,7 +56,6 @@
                 <Y>0</Y>
                 <Z>-17.5</Z>
             </ParticleOffset>
-
             <DeformationRatio>0.2</DeformationRatio>
             <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
             <DamagedSound>ParticleHeavyMech</DamagedSound>
