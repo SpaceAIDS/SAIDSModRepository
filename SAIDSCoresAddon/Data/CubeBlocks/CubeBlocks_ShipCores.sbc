@@ -256,7 +256,6 @@
       <PCU>1</PCU>
       <IsAirTight>false</IsAirTight>
     </Definition>
-
     <!-- Large capital -->
     <Definition xsi:type="MyObjectBuilder_BeaconDefinition">
       <Id>
