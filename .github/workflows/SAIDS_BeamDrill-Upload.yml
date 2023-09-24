@@ -1,0 +1,21 @@
+name: "Upload SAIDS_Beamdrill"
+
+on:
+  push:
+    paths:
+      - "SAIDS_Beamdrill/**"
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: AnarkisGaming/workshop@v1
+        with:
+          appID: 244850
+          publishedFileID: 3040264438
+          path: SAIDS_Beamdrill
+          changelog: ${{ github.event.head_commit.message }}              
+        env:
+          STEAM_ACCOUNT_NAME: ${{ secrets.accountname }}
+          STEAM_PASSWORD: ${{ secrets.password }}
