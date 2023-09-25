@@ -25,7 +25,7 @@
     </FogProperties>
 
 	<SunProperties>
-	  <SunIntensity>1</SunIntensity>
+	  <SunIntensity>0.99</SunIntensity>
       <EnvironmentProbe>
         <TimeOut>0.03</TimeOut>
         <DrawDistance>1E-07</DrawDistance>
@@ -34,7 +34,7 @@
         <AmbientMaxClamp>1</AmbientMaxClamp>
       </EnvironmentProbe>
       <EnvironmentLight>
-	    <SunDiscInnerDot>1.0</SunDiscInnerDot>
+        <SunDiscInnerDot>1.0</SunDiscInnerDot>
         <SunDiscOuterDot>1.0</SunDiscOuterDot>
 
                 <AmbientDiffuseFactor>2</AmbientDiffuseFactor>
