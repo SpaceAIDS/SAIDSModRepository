@@ -68,9 +68,9 @@
       <ModelOffset x="0" y="0" z="0"/>
       <Model>Models\Ship_Core_1x3.mwm</Model>
       <Components>
-        <Component Subtype="SteelPlate" Count="500"/>
+        <Component Subtype="SteelPlate" Count="300"/>
         <Component Subtype="Computer" Count="1"/>
-        <Component Subtype="SteelPlate" Count="500"/>
+        <Component Subtype="SteelPlate" Count="300"/>
       </Components>
       <CriticalComponent Subtype="Computer" Index="0"/>
       <MountPoints>
