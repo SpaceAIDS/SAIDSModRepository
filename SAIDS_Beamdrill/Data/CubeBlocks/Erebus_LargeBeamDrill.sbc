@@ -8,7 +8,7 @@
             </Id>
             <DisplayName>Large Beam Drill</DisplayName>
             <Icon>Textures\GUI\Icons\Erebus\LargeBeamDrill.dds</Icon>
-            <Description>Requires 1GW of power to dig</Description>
+            <Description>Requires 300MW of power to dig</Description>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="3" y="3" z="8"/>
