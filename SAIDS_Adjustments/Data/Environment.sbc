@@ -34,7 +34,7 @@
         <AmbientMaxClamp>1</AmbientMaxClamp>
       </EnvironmentProbe>
       <EnvironmentLight>
-        <SunDiscInnerDot>1.0</SunDiscInnerDot>
+	    <SunDiscInnerDot>1.0</SunDiscInnerDot>
         <SunDiscOuterDot>1.0</SunDiscOuterDot>
 
                 <AmbientDiffuseFactor>2</AmbientDiffuseFactor>
