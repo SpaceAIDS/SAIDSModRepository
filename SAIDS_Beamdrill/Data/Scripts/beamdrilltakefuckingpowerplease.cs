@@ -9,6 +9,7 @@ using Sandbox.Common.ObjectBuilders;
 using VRage.Game.Components;
 using VRage.ModAPI;
 using VRage.ObjectBuilders;
+using VRage.Game.ModAPI;
 
 namespace PowerOverride
 {
@@ -17,6 +18,7 @@ namespace PowerOverride
     {
         private MyResourceSinkComponent Sink = null;
         public IMyShipDrill exampleBlock;
+        private bool hasNotified = false;
 
         public override void Init(MyObjectBuilder_EntityBase objectBuilder)
         {
@@ -48,13 +50,56 @@ namespace PowerOverride
         {
             try
             {
-                CalculatePowerDraw();
-                Sink.Update();
+                if (exampleBlock.Enabled)
+                {
+                    // Calculate the available power of the entire grid.
+                    float availableGridPower = CalculateMaxAvailableGridPower();
+
+                    // If available power is less than 1GW, turn off the block.
+                    if (availableGridPower < 300.000f)
+                    {
+                        exampleBlock.Enabled = false;
+
+                        // Show the notification only once
+                        if (!hasNotified)
+                        {
+                            //MyAPIGateway.Utilities.ShowNotification("Insufficient Power", 1500, "Red"); // Show a notification
+                            hasNotified = true;
+                        }
+                    }
+                    else
+                    {
+                        hasNotified = false; // Reset the flag if there's enough power.
+                    }
+
+                    CalculatePowerDraw();
+                    Sink.Update();
+                }
             }
             catch (Exception e)
             {
-                MyAPIGateway.Utilities.ShowNotification($"{e}", 5000, "Red");
+                //MyAPIGateway.Utilities.ShowNotification($"{e}", 5000, "Red");
             }
+        }
+
+        // Method to calculate the available power for the grid, similar to your example.
+        private float CalculateMaxAvailableGridPower()
+        {
+            float totalPower = 0f;
+            var blocks = new List<IMySlimBlock>();
+            exampleBlock.CubeGrid.GetBlocks(blocks);
+
+            foreach (var block in blocks)
+            {
+                var fatBlock = block.FatBlock;
+                if (fatBlock is IMyPowerProducer)
+                {
+                    var powerProducer = fatBlock as IMyPowerProducer;
+                    totalPower += powerProducer.MaxOutput;
+                }
+            }
+
+            return totalPower;
         }
 
         public override void Close()
@@ -69,7 +114,7 @@ namespace PowerOverride
             }
             catch (Exception e)
             {
-                MyAPIGateway.Utilities.ShowNotification($"{e}", 5000, "Red");
+               // MyAPIGateway.Utilities.ShowNotification($"{e}", 5000, "Red");
             }
         }
 
@@ -81,7 +126,7 @@ namespace PowerOverride
             }
             else
             {
-                return 1000.000f;
+                return 300.000f;
             }
         }
     }
