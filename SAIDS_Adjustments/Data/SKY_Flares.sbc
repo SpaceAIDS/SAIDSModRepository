@@ -1,0 +1,440 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Flares>
+        <Definition xsi:type="FlareDefinition">
+            <Id>
+                <TypeId>FlareDefinition</TypeId>
+                <SubtypeId>Sun</SubtypeId>
+            </Id>
+            <Intensity>3</Intensity>
+            <SubGlares>
+                <SubGlare>
+                    <Type>Rotated</Type>
+                    <Material>SunBigGlow</Material>
+                    <!--<Color>
+            <X>0.960</X>
+            <Y>0.545</Y>
+            <Z>0.066</Z>
+            <W>1</W>
+          </Color>-->
+
+                    <Color>
+                        <X>5.50</X>
+                        <Y>5.78</Y>
+                        <Z>5.96</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>7000</X>
+                        <Y>7000</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+				
+				
+				
+				<SubGlare>
+                    <Type>Rotated</Type>
+                    <Material>SunBigGlow</Material>
+                    <!--<Color>
+            <X>0.960</X>
+            <Y>0.545</Y>
+            <Z>0.066</Z>
+            <W>1</W>
+          </Color>-->
+
+                    <Color>
+                        <X>0.30</X>
+                        <Y>1.30</Y>
+                        <Z>3.96</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>9000</X>
+                        <Y>9000</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+				
+				
+				<SubGlare>
+                    <Type>Rotated</Type>
+                    <Material>SunBigGlow</Material>
+                    <!--<Color>
+            <X>0.960</X>
+            <Y>0.545</Y>
+            <Z>0.066</Z>
+            <W>1</W>
+          </Color>-->
+
+                    <Color>
+                        <X>1.0</X>
+                        <Y>1.30</Y>
+                        <Z>7.96</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>5000</X>
+                        <Y>5000</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+
+
+
+
+
+                    <SubGlare>
+                    <Type>Oriented</Type>
+                    <Material>SunBigRays</Material>
+                    <Color>
+                        <X>0.4</X>
+                        <Y>0.6</Y>
+                        <Z>0.8</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>22000</X>
+                        <Y>22000</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+                    <OcclusionToIntensityCurve>
+                        <KeyPoint>
+                            <Occlusion>0</Occlusion>
+                            <Intensity>1</Intensity>
+                        </KeyPoint>
+                        <KeyPoint>
+                            <Occlusion>0.35</Occlusion>
+                            <Intensity>0</Intensity>
+                        </KeyPoint>
+                    </OcclusionToIntensityCurve>
+
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+
+
+
+
+                <SubGlare>
+                    <Type>Oriented</Type>
+                    <Material>SunBigRays</Material>
+                    <Color>
+                        <X>1.4</X>
+                        <Y>1.6</Y>
+                        <Z>1.8</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>17000</X>
+                        <Y>17000</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+                    <OcclusionToIntensityCurve>
+                        <KeyPoint>
+                            <Occlusion>0</Occlusion>
+                            <Intensity>1</Intensity>
+                        </KeyPoint>
+                        <KeyPoint>
+                            <Occlusion>0.35</Occlusion>
+                            <Intensity>0</Intensity>
+                        </KeyPoint>
+                    </OcclusionToIntensityCurve>
+
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+
+                <SubGlare>
+                    <Type>Rotated</Type>
+                    <Material>SunBigRays</Material>
+                    <Color>
+                        <X>0.90</X>
+                        <Y>0.90</Y>
+                        <Z>1.6</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>16000</X>
+                        <Y>16000</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+
+                <SubGlare>
+                    <Type>Rotated</Type>
+                    <Material>SunBigRays</Material>
+                    <Color>
+                        <X>0.90</X>
+                        <Y>0.90</Y>
+                        <Z>1</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>15000</X>
+                        <Y>15000</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+                    <OcclusionToIntensityCurve>
+                        <KeyPoint>
+                            <Occlusion>0</Occlusion>
+                            <Intensity>1</Intensity>
+                        </KeyPoint>
+                        <KeyPoint>
+                            <Occlusion>0.35</Occlusion>
+                            <Intensity>0</Intensity>
+                        </KeyPoint>
+                    </OcclusionToIntensityCurve>
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+
+
+
+<!-- RGB  -->
+ 
+                <SubGlare>
+                    <Type>Oriented</Type>
+                    <Material>SunFlareBlurred</Material>
+                    <!-- RED blurred Flare-->
+                    <Color>
+                        <X>1</X>
+                        <Y>0</Y>
+                        <Z>0</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>23500</X>
+                        <Y>23500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>0.15</X>
+                        <Y>0.15</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+				
+				 <SubGlare>
+                    <Type>Oriented</Type>
+                    <Material>SunFlareBlurred</Material>
+                    <!-- GREEN blurred Flare-->
+                    <Color>
+                        <X>0</X>
+                        <Y>0.75</Y>
+                        <Z>0</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>23500</X>
+                        <Y>23500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>0.25</X>
+                        <Y>0.25</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+				
+				 <SubGlare>
+                    <Type>Oriented</Type>
+                    <Material>SunFlareBlurred</Material>
+                    <!-- BLUE blurred Flare-->
+                    <Color>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Z>0.50</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>23500</X>
+                        <Y>23500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>0.35</X>
+                        <Y>0.35</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+				
+				
+				<!-- RGB INVERTED  -->
+ 
+                <SubGlare>
+                    <Type>Oriented</Type>
+                    <Material>SunFlareBlurred</Material>
+                    <!-- RED blurred Flare-->
+                    <Color>
+                        <X>1</X>
+                        <Y>0</Y>
+                        <Z>0</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>23500</X>
+                        <Y>23500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>-0.15</X>
+                        <Y>-0.15</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+				
+				 <SubGlare>
+                    <Type>Oriented</Type>
+                    <Material>SunFlareBlurred</Material>
+                    <!-- GREEN blurred Flare-->
+                    <Color>
+                        <X>0</X>
+                        <Y>0.75</Y>
+                        <Z>0</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>23500</X>
+                        <Y>23500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>-0.25</X>
+                        <Y>-0.25</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+				
+				 <SubGlare>
+                    <Type>Oriented</Type>
+                    <Material>SunFlareBlurred</Material>
+                    <!-- BLUE blurred Flare-->
+                    <Color>
+                        <X>0</X>
+                        <Y>0</Y>
+                        <Z>0.50</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>23500</X>
+                        <Y>23500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>-0.35</X>
+                        <Y>-0.35</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+
+                
+
+
+               
+
+                <SubGlare>
+                    <Type>AnamorphicInverted</Type>
+                    <Material>SunFlareWhiteAnamorphic</Material>
+                    <Color>
+                        <X>0.25</X>
+                        <Y>0.25</Y>
+                        <Z>0.58</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>170000</X>
+                        <Y>5500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+
+                <SubGlare>
+                    <Type>Anamorphic</Type>
+                    <Material>SunFlareWhiteAnamorphic</Material>
+                    <Color>
+                        <X>0.25</X>
+                        <Y>0.25</Y>
+                        <Z>0.58</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>180000</X>
+                        <Y>3500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>0</X>
+                        <Y>0</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+
+                <SubGlare>
+                    <Type>Anamorphic</Type>
+                    <Material>SunFlareWhiteAnamorphic</Material>
+                    <Color>
+                        <X>0.25</X>
+                        <Y>0.25</Y>
+                        <Z>0.58</Z>
+                        <W>1</W>
+                    </Color>
+                    <Size>
+                        <X>150000</X>
+                        <Y>3500</Y>
+                    </Size>
+                    <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+                    <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+                    <ScreenCenterDistance>
+                        <X>-0.1</X>
+                        <Y>-0.04</Y>
+                    </ScreenCenterDistance>
+                </SubGlare>
+            </SubGlares>
+        </Definition>
+
+        <!--Sun definitions end here!-->
+
+
+
+          
+    </Flares>
+</Definitions>
