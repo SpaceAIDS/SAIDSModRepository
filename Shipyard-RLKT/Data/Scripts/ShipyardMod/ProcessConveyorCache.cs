@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Sandbox.Game;
 using Sandbox.Game.Entities;
 using Sandbox.Game.GameSystems;
@@ -14,7 +15,7 @@ namespace ShipyardMod.ProcessHandlers
     {
         public override int GetUpdateResolution()
         {
-            return 5000;
+            return 5000;   // holy shit this causes a lot of lag due to conveyors!!!!!!!!!!!!!!!!!
         }
 
         public override bool ServerOnly()
@@ -22,92 +23,95 @@ namespace ShipyardMod.ProcessHandlers
             return true;
         }
 
+        private int _currentShipyardIndex = 0;
+
         public override void Handle()
         {
-            foreach (ShipyardItem item in ProcessShipyardDetection.ShipyardsList)
+            if (ProcessShipyardDetection.ShipyardsList.Count == 0) return;
+
+            ShipyardItem currentItem = ProcessShipyardDetection.ShipyardsList.ElementAt(_currentShipyardIndex);
+            _currentShipyardIndex = (_currentShipyardIndex + 1) % ProcessShipyardDetection.ShipyardsList.Count;
+
+            var grid = (IMyCubeGrid)currentItem.YardEntity;
+
+            if (grid.Physics == null || grid.Closed || currentItem.YardType == ShipyardType.Invalid)
             {
-                var grid = (IMyCubeGrid)item.YardEntity;
-
-                if (grid.Physics == null || grid.Closed || item.YardType == ShipyardType.Invalid)
-                {
-                    item.ConnectedCargo.Clear();
-                    continue;
-                }
-                var gts = MyAPIGateway.TerminalActionsHelper.GetTerminalSystemForGrid(grid);
-
-                var blocks = new List<IMyTerminalBlock>();
-                gts.GetBlocks(blocks);
-
-                //assume that all the tools are connected, so only check against the first one in the list
-                var cornerInventory = (IMyInventory)((MyEntity)item.Tools[0]).GetInventory();
-
-                //check new blocks on the grid
-                
-                var disconnectedInventories = new HashSet<IMyTerminalBlock>();
-
-                //remove blocks which are closed or no longer in the terminal system
-                foreach (var block in item.ConnectedCargo)
-                {
-                    if (block.Closed || !blocks.Contains(block))
-                        disconnectedInventories.Add(block);
-                }
-
-                foreach (var dis in disconnectedInventories)
-                {
-                    item.ConnectedCargo.Remove(dis);
-                }
-
-                var newConnections = new HashSet<IMyTerminalBlock>();
-                Utilities.InvokeBlocking(() =>
-                                         {
-                                             //check our cached inventories for connected-ness
-                                             foreach (IMyTerminalBlock cargo in item.ConnectedCargo)
-                                             {
-                                                 if (cornerInventory == null)
-                                                     return;
-
-                                                 if (!cornerInventory.IsConnectedTo(((MyEntity)cargo).GetInventory()))
-                                                     disconnectedInventories.Add(cargo);
-                                             }
-
-                                             foreach (var block in blocks)
-                                             {
-                                                 //avoid duplicate checks
-                                                 if (disconnectedInventories.Contains(block) || item.ConnectedCargo.Contains(block))
-                                                     continue;
-
-                                                 //to avoid shipyard corners pulling from each other. Circles are no fun.
-                                                 if (block.BlockDefinition.SubtypeName.Contains("ShipyardCorner"))
-                                                     continue;
-
-                                                 //ignore reactors
-                                                 if (block is IMyReactor)
-                                                     continue;
-
-                                                 //ignore oxygen generators and tanks
-                                                 if (block is IMyGasGenerator || block is IMyGasTank)
-                                                     continue;
-
-                                                 if (item.ConnectedCargo.Contains(block) || disconnectedInventories.Contains(block))
-                                                     continue;
-
-                                                 if (((MyEntity)block).HasInventory)
-                                                 {
-                                                     MyInventory inventory = ((MyEntity)block).GetInventory();
-                                                     if (cornerInventory == null)
-                                                         return;
-                                                     if (cornerInventory.IsConnectedTo(inventory))
-                                                         newConnections.Add(block);
-                                                 }
-                                             }
-                                         });
-
-                foreach (IMyTerminalBlock removeBlock in disconnectedInventories)
-                    item.ConnectedCargo.Remove(removeBlock);
-
-                foreach (IMyTerminalBlock newBlock in newConnections)
-                    item.ConnectedCargo.Add(newBlock);
+                currentItem.ConnectedCargo.Clear();
+                return;
             }
+            var gts = MyAPIGateway.TerminalActionsHelper.GetTerminalSystemForGrid(grid);
+
+            var blocks = new List<IMyTerminalBlock>();
+            gts.GetBlocks(blocks);
+
+            //assume that all the tools are connected, so only check against the first one in the list
+            var cornerInventory = (IMyInventory)((MyEntity)currentItem.Tools[0]).GetInventory();
+
+            var disconnectedInventories = new HashSet<IMyTerminalBlock>();
+
+            //remove blocks which are closed or no longer in the terminal system
+            foreach (var block in currentItem.ConnectedCargo)
+            {
+                if (block.Closed || !blocks.Contains(block))
+                    disconnectedInventories.Add(block);
+            }
+
+            foreach (var dis in disconnectedInventories)
+            {
+                currentItem.ConnectedCargo.Remove(dis);
+            }
+
+            var newConnections = new HashSet<IMyTerminalBlock>();
+            Utilities.InvokeBlocking(() =>
+            {
+                //check our cached inventories for connected-ness
+                foreach (IMyTerminalBlock cargo in currentItem.ConnectedCargo)
+                {
+                    if (cornerInventory == null)
+                        return;
+
+                    if (!cornerInventory.IsConnectedTo(((MyEntity)cargo).GetInventory()))
+                        disconnectedInventories.Add(cargo);
+                }
+
+                foreach (var block in blocks)
+                {
+                    //avoid duplicate checks
+                    if (disconnectedInventories.Contains(block) || currentItem.ConnectedCargo.Contains(block))
+                        continue;
+
+                    //to avoid shipyard corners pulling from each other. Circles are no fun.
+                    if (block.BlockDefinition.SubtypeName.Contains("ShipyardCorner"))
+                        continue;
+
+                    //ignore reactors
+                    if (block is IMyReactor)
+                        continue;
+
+                    //ignore oxygen generators and tanks
+                    if (block is IMyGasGenerator || block is IMyGasTank)
+                        continue;
+
+                    if (currentItem.ConnectedCargo.Contains(block) || disconnectedInventories.Contains(block))
+                        continue;
+
+                    if (((MyEntity)block).HasInventory)
+                    {
+                        MyInventory inventory = ((MyEntity)block).GetInventory();
+                        if (cornerInventory == null)
+                            return;
+                        if (cornerInventory.IsConnectedTo(inventory))
+                            newConnections.Add(block);
+                    }
+                }
+            });
+
+            foreach (IMyTerminalBlock removeBlock in disconnectedInventories)
+                currentItem.ConnectedCargo.Remove(removeBlock);
+
+            foreach (IMyTerminalBlock newBlock in newConnections)
+                currentItem.ConnectedCargo.Add(newBlock);
         }
+
     }
 }
