@@ -36,7 +36,13 @@ namespace ShipyardMod.ProcessHandlers
         {
             if (ProcessShipyardDetection.ShipyardsList.Count == 0) return;
 
-            // Set up state for the background task and callback
+            // Add this check before using _currentShipyardIndex
+            if (_currentShipyardIndex >= ProcessShipyardDetection.ShipyardsList.Count)
+            {
+                _currentShipyardIndex = 0; // Reset the index
+            }
+
+            // Now, it should be safe to get the element
             _currentItem = ProcessShipyardDetection.ShipyardsList.ElementAt(_currentShipyardIndex);
             _currentShipyardIndex = (_currentShipyardIndex + 1) % ProcessShipyardDetection.ShipyardsList.Count;
 
@@ -45,6 +51,7 @@ namespace ShipyardMod.ProcessHandlers
 
             _conveyorTask = _myParallelTask.StartBackground(ProcessConveyorBackground, ConveyorCallback);
         }
+
 
         private void ProcessConveyorBackground()
         {
