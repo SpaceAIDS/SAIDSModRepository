@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ParallelTasks;
 using Sandbox.Game;
 using Sandbox.Game.Entities;
 using Sandbox.Game.GameSystems;
@@ -15,84 +16,90 @@ namespace ShipyardMod.ProcessHandlers
     {
         public override int GetUpdateResolution()
         {
-            return 5000;   // holy shit this causes a lot of lag due to conveyors!!!!!!!!!!!!!!!!!
+            return 5000;   // holy shit this causes a lot of lag due to conveyors!!!!!!!!!!!!!!!!!   unless i fix it :^)
         }
 
         public override bool ServerOnly()
         {
             return true;
         }
+        private int _currentShipyardIndex = 0; // assuming you want to start from the first shipyard
 
-        private int _currentShipyardIndex = 0;
+        // Declare some class-level fields to store shared state
+        private Task _conveyorTask;
+        private ShipyardItem _currentItem;
+        private HashSet<IMyTerminalBlock> _disconnectedInventories = new HashSet<IMyTerminalBlock>();
+        private HashSet<IMyTerminalBlock> _newConnections = new HashSet<IMyTerminalBlock>();
+        private IMyParallelTask _myParallelTask = MyAPIGateway.Parallel; // Assuming this is how you obtain an instance
 
         public override void Handle()
         {
             if (ProcessShipyardDetection.ShipyardsList.Count == 0) return;
 
-            ShipyardItem currentItem = ProcessShipyardDetection.ShipyardsList.ElementAt(_currentShipyardIndex);
+            // Set up state for the background task and callback
+            _currentItem = ProcessShipyardDetection.ShipyardsList.ElementAt(_currentShipyardIndex);
             _currentShipyardIndex = (_currentShipyardIndex + 1) % ProcessShipyardDetection.ShipyardsList.Count;
 
-            var grid = (IMyCubeGrid)currentItem.YardEntity;
+            _disconnectedInventories.Clear();
+            _newConnections.Clear();
 
-            if (grid.Physics == null || grid.Closed || currentItem.YardType == ShipyardType.Invalid)
+            _conveyorTask = _myParallelTask.StartBackground(ProcessConveyorBackground, ConveyorCallback);
+        }
+
+        private void ProcessConveyorBackground()
+        {
+            var grid = (IMyCubeGrid)_currentItem.YardEntity;
+
+            if (grid.Physics == null || grid.Closed || _currentItem.YardType == ShipyardType.Invalid)
             {
-                currentItem.ConnectedCargo.Clear();
+                _currentItem.ConnectedCargo.Clear();
                 return;
             }
-            var gts = MyAPIGateway.TerminalActionsHelper.GetTerminalSystemForGrid(grid);
 
+            var gts = MyAPIGateway.TerminalActionsHelper.GetTerminalSystemForGrid(grid);
             var blocks = new List<IMyTerminalBlock>();
             gts.GetBlocks(blocks);
 
-            //assume that all the tools are connected, so only check against the first one in the list
-            var cornerInventory = (IMyInventory)((MyEntity)currentItem.Tools[0]).GetInventory();
-
-            var disconnectedInventories = new HashSet<IMyTerminalBlock>();
+            var cornerInventory = (IMyInventory)((MyEntity)_currentItem.Tools[0]).GetInventory();
 
             //remove blocks which are closed or no longer in the terminal system
-            foreach (var block in currentItem.ConnectedCargo)
+            foreach (var block in _currentItem.ConnectedCargo)
             {
                 if (block.Closed || !blocks.Contains(block))
-                    disconnectedInventories.Add(block);
+                    _disconnectedInventories.Add(block);
             }
 
-            foreach (var dis in disconnectedInventories)
-            {
-                currentItem.ConnectedCargo.Remove(dis);
-            }
-
-            var newConnections = new HashSet<IMyTerminalBlock>();
             Utilities.InvokeBlocking(() =>
             {
-                //check our cached inventories for connected-ness
-                foreach (IMyTerminalBlock cargo in currentItem.ConnectedCargo)
+                // Use cornerInventory instead of _cornerInventory
+                foreach (IMyTerminalBlock cargo in _currentItem.ConnectedCargo)
                 {
                     if (cornerInventory == null)
                         return;
 
                     if (!cornerInventory.IsConnectedTo(((MyEntity)cargo).GetInventory()))
-                        disconnectedInventories.Add(cargo);
+                        _disconnectedInventories.Add(cargo);
                 }
 
                 foreach (var block in blocks)
                 {
-                    //avoid duplicate checks
-                    if (disconnectedInventories.Contains(block) || currentItem.ConnectedCargo.Contains(block))
+                    // Avoid duplicate checks
+                    if (_disconnectedInventories.Contains(block) || _currentItem.ConnectedCargo.Contains(block))
                         continue;
 
-                    //to avoid shipyard corners pulling from each other. Circles are no fun.
+                    // To avoid shipyard corners pulling from each other
                     if (block.BlockDefinition.SubtypeName.Contains("ShipyardCorner"))
                         continue;
 
-                    //ignore reactors
+                    // Ignore reactors
                     if (block is IMyReactor)
                         continue;
 
-                    //ignore oxygen generators and tanks
+                    // Ignore oxygen generators and tanks
                     if (block is IMyGasGenerator || block is IMyGasTank)
                         continue;
 
-                    if (currentItem.ConnectedCargo.Contains(block) || disconnectedInventories.Contains(block))
+                    if (_currentItem.ConnectedCargo.Contains(block) || _disconnectedInventories.Contains(block))
                         continue;
 
                     if (((MyEntity)block).HasInventory)
@@ -101,17 +108,27 @@ namespace ShipyardMod.ProcessHandlers
                         if (cornerInventory == null)
                             return;
                         if (cornerInventory.IsConnectedTo(inventory))
-                            newConnections.Add(block);
+                            _newConnections.Add(block);
                     }
                 }
             });
-
-            foreach (IMyTerminalBlock removeBlock in disconnectedInventories)
-                currentItem.ConnectedCargo.Remove(removeBlock);
-
-            foreach (IMyTerminalBlock newBlock in newConnections)
-                currentItem.ConnectedCargo.Add(newBlock);
         }
+
+        private void ConveyorCallback()
+        {
+            // Handle the results of the background task and update connected cargo
+            foreach (IMyTerminalBlock removeBlock in _disconnectedInventories)
+                _currentItem.ConnectedCargo.Remove(removeBlock);
+
+            foreach (IMyTerminalBlock newBlock in _newConnections)
+                _currentItem.ConnectedCargo.Add(newBlock);
+        }
+
+        private void LogAnyTaskErrors(ref Task task, string taskName)
+        {
+            // Log the exception and handle the error. You can implement this depending on how you manage errors.
+        }
+
 
     }
 }
