@@ -31,18 +31,24 @@ namespace ShipyardMod.ProcessHandlers
         private HashSet<IMyTerminalBlock> _disconnectedInventories = new HashSet<IMyTerminalBlock>();
         private HashSet<IMyTerminalBlock> _newConnections = new HashSet<IMyTerminalBlock>();
         private IMyParallelTask _myParallelTask = MyAPIGateway.Parallel; // Assuming this is how you obtain an instance
+        private bool ConveyorUpdating { get; set; } = false;
 
         public override void Handle()
         {
+            if (ConveyorUpdating || (!(_conveyorTask.Equals(default(Task))) && !_conveyorTask.IsComplete))
+                return;
+
+            // Check for exceptions only if _conveyorTask was previously assigned.
+            if (!(_conveyorTask.Equals(default(Task))) && _conveyorTask.Exceptions != null && _conveyorTask.Exceptions.Length > 0)
+                LogAnyTaskErrors(ref _conveyorTask, "ConveyorTask");
+
             if (ProcessShipyardDetection.ShipyardsList.Count == 0) return;
 
-            // Add this check before using _currentShipyardIndex
             if (_currentShipyardIndex >= ProcessShipyardDetection.ShipyardsList.Count)
             {
                 _currentShipyardIndex = 0; // Reset the index
             }
 
-            // Now, it should be safe to get the element
             _currentItem = ProcessShipyardDetection.ShipyardsList.ElementAt(_currentShipyardIndex);
             _currentShipyardIndex = (_currentShipyardIndex + 1) % ProcessShipyardDetection.ShipyardsList.Count;
 
@@ -50,7 +56,9 @@ namespace ShipyardMod.ProcessHandlers
             _newConnections.Clear();
 
             _conveyorTask = _myParallelTask.StartBackground(ProcessConveyorBackground, ConveyorCallback);
+            ConveyorUpdating = true;
         }
+
 
 
         private void ProcessConveyorBackground()
@@ -129,11 +137,19 @@ namespace ShipyardMod.ProcessHandlers
 
             foreach (IMyTerminalBlock newBlock in _newConnections)
                 _currentItem.ConnectedCargo.Add(newBlock);
+            ConveyorUpdating = false;
         }
 
         private void LogAnyTaskErrors(ref Task task, string taskName)
         {
-            // Log the exception and handle the error. You can implement this depending on how you manage errors.
+            if (task.Exceptions != null)
+            {
+                foreach (var ex in task.Exceptions)
+                {
+                    MyAPIGateway.Utilities.ShowNotification($"Error in {taskName}: {ex.Message}", 5000);
+                    // Additional logging can be added here
+                }
+            }
         }
 
 
