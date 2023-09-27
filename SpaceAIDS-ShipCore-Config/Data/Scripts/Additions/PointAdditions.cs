@@ -4,12 +4,12 @@ using VRage.Game.Components;
 
 namespace ShipPoints
 {
-	[MySessionComponentDescriptor(MyUpdateOrder.NoUpdate)]
-	class PointAdditions : MySessionComponentBase
-	{
-		public override void Init(MyObjectBuilder_SessionComponent sessionComponent)
-		{
-			MyAPIGateway.Utilities.SendModMessage(2546247, MyAPIGateway.Utilities.SerializeToBinary(@"
+    [MySessionComponentDescriptor(MyUpdateOrder.NoUpdate)]
+    class PointAdditions : MySessionComponentBase
+    {
+        public override void Init(MyObjectBuilder_SessionComponent sessionComponent)
+        {
+            MyAPIGateway.Utilities.SendModMessage(2546247, MyAPIGateway.Utilities.SerializeToBinary(@"
 				LargeBlockBatteryBlock@15;
 				LargeBlockLargeGenerator@300;
 				LargeBlockSmallGenerator@30;
@@ -141,6 +141,21 @@ namespace ShipPoints
 				ARYLNX_Epstein_Drive@50;
 				ARYLNX_ROCI_Epstein_Drive@75;
 				ARYLNX_SCIRCOCCO_Epstein_Drive@175;
+				ARYLNX_MUNR_Epstein_Drive@25;
+				
+				LargeBlockLargeThrust@1;
+				LargeBlockSmallThrust@1;
+				LargeBlockLargeThrustSciFi@1;
+				LargeBlockSmallThrustSciFi@1;
+				LargeBlockLargeModularThruster@1;
+				LargeBlockSmallModularThruster@1;
+
+
+
+
+
+
+
 
 				BlinkDriveLarge@250;
 				LargeJumpDrive@250;
@@ -154,6 +169,6 @@ namespace ShipPoints
 				AryxRCSRamp@5;
 
 			"));
-		}
-	}
+        }
+    }
 }
