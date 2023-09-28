@@ -150,12 +150,13 @@ namespace ShipPoints
 				LargeBlockLargeModularThruster@1;
 				LargeBlockSmallModularThruster@1;
 
-
-
-
-
-
-
+				SAIDS_BattlecruiserCore@0;
+				SAIDS_BattleshipCore@0;
+				SAIDS_CapitalCore@0;
+				SAIDS_CruiserCore@0;
+				SAIDS_DestroyerCore@0;
+				SAIDS_FrigateCore@0;
+				SAIDS_StationCore@0;
 
 				BlinkDriveLarge@250;
 				LargeJumpDrive@250;
