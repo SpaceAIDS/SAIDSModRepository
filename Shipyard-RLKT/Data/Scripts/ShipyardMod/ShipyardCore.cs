@@ -16,6 +16,7 @@ using VRage.Game.Components;
 using VRage.Game.ModAPI;
 using VRage.Utils;
 using VRageMath;
+using static VRageRender.MyBillboard;
 
 /* Hello there!
  * 
