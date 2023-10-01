@@ -13,6 +13,7 @@ namespace ShipPoints
 				LargeBlockBatteryBlock@15;
 				LargeBlockLargeGenerator@300;
 				LargeBlockSmallGenerator@30;
+				LargeHydrogenEngine@30;
 
 				ARYXAtlasPDC@75;
 				C100mmTurret@100;
