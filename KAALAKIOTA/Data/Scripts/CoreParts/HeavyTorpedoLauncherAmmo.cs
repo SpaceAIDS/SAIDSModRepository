@@ -695,7 +695,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "ExpanseFX3", //ShipWelderArc
+                        Name = "WeaponLaser", //ShipWelderArc
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
@@ -731,10 +731,10 @@ namespace Scripts
                     WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
-                        Enable = false,
-                        Length = 25f, //
+                        Enable = true,
+                        Length = 50f, //
                         Width = 0.5f, //
-                        Color = Color(red: 255, green: 255, blue: 255f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Color = Color(red: 35, green: 45, blue: 65f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -760,13 +760,13 @@ namespace Scripts
                     },
                     Trail = new TrailDef
                     {
-                        Enable = false,
+                        Enable = true,
                         Textures = new[] {
-                            "CoilTrail", // Please always have this Line set, if this Section is enabled.
+                            "WeaponLaser", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal,
                         DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
-                        Color = Color(red: 50, green: 10, blue: 0, alpha: 1),
+                        Color = Color(red: 45, green: 35, blue: 55, alpha: 1),
                         Back = false,
                         CustomWidth = 0.5f,
                         UseWidthVariance = false,

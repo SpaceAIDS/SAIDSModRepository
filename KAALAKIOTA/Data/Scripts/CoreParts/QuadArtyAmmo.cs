@@ -115,8 +115,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = -100f, // Multiplier for damage against large grids.
-                    Small = -100f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -503,8 +503,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = -100f, // Multiplier for damage against large grids.
-                    Small = -100f, // Multiplier for damage against small grids.
+                    Large = 1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -891,8 +891,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = -100f, // Multiplier for damage against large grids.
-                    Small = -100f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -1279,8 +1279,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = -100f, // Multiplier for damage against large grids.
-                    Small = -100f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -1291,7 +1291,7 @@ namespace Scripts
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 1f, // Multiplier for damage against shields.
+                    Modifier = 1.25f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
