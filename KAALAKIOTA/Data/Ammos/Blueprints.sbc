@@ -13,16 +13,13 @@
       <Icon>Textures\GUI\Icons\ammo\blueammo.dds</Icon>
 	  
       <Prerequisites>
-        <Item Amount="900" TypeId="Ingot" SubtypeId="Iron" />
-        <Item Amount="1250" TypeId="Ingot" SubtypeId="Magnesium" />
-        <Item Amount="5000" TypeId="Ingot" SubtypeId="Cobalt" />
-        <Item Amount="50" TypeId="Ingot" SubtypeId="Nickel" />
-        <Item Amount="50" TypeId="Ingot" SubtypeId="Silicon" />
+        <Item Amount="10" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Cobalt" />
         <Item Amount="1" TypeId="Ingot" SubtypeId="Silver" />
         <Item Amount="0.5" TypeId="Ingot" SubtypeId="Gold" />
       </Prerequisites>
       <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="BlueAmmoMagDef" />
-      <BaseProductionTimeInSeconds>40</BaseProductionTimeInSeconds>
+      <BaseProductionTimeInSeconds>3</BaseProductionTimeInSeconds>
 	  
     </Blueprint>
 
@@ -35,16 +32,14 @@
       <Icon>Textures\GUI\Icons\ammo\purpleammo.dds</Icon>
 	  
       <Prerequisites>
-        <Item Amount="9300" TypeId="Ingot" SubtypeId="Iron" />
-        <Item Amount="2500" TypeId="Ingot" SubtypeId="Magnesium" />
-        <Item Amount="5" TypeId="Ingot" SubtypeId="Cobalt" />
-        <Item Amount="50" TypeId="Ingot" SubtypeId="Nickel" />
-        <Item Amount="50" TypeId="Ingot" SubtypeId="Silicon" />
-        <Item Amount="1" TypeId="Ingot" SubtypeId="Silver" />
-        <Item Amount="0.5" TypeId="Ingot" SubtypeId="Gold" />
+        <Item Amount="5" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="3" TypeId="Ingot" SubtypeId="Magnesium" />
+        <Item Amount="5" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Silicon" />
+
       </Prerequisites>
       <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="PurpleAmmoMagDef" />
-      <BaseProductionTimeInSeconds>40</BaseProductionTimeInSeconds>
+      <BaseProductionTimeInSeconds>3</BaseProductionTimeInSeconds>
 	  
     </Blueprint>
 
@@ -57,14 +52,12 @@
       <Icon>Textures\GUI\Icons\ammo\greenammo.dds</Icon>
 	  
       <Prerequisites>
-        <Item Amount="9100" TypeId="Ingot" SubtypeId="Iron" />
-        <Item Amount="2500" TypeId="Ingot" SubtypeId="Magnesium" />
-        <Item Amount="500" TypeId="Ingot" SubtypeId="Cobalt" />
-        <Item Amount="500" TypeId="Ingot" SubtypeId="Nickel" />
-        <Item Amount="500" TypeId="Ingot" SubtypeId="Silicon" />
+        <Item Amount="3" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="2.5" TypeId="Ingot" SubtypeId="Magnesium" />
+        <Item Amount="5" TypeId="Ingot" SubtypeId="Cobalt" />
       </Prerequisites>
       <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="GreenAmmoMagDef" />
-      <BaseProductionTimeInSeconds>40</BaseProductionTimeInSeconds>
+      <BaseProductionTimeInSeconds>3</BaseProductionTimeInSeconds>
 	  
     </Blueprint>
 
@@ -77,15 +70,13 @@
       <Icon>Textures\GUI\Icons\ammo\redammo.dds</Icon>
 	  
       <Prerequisites>
-        <Item Amount="1000" TypeId="Ingot" SubtypeId="Iron" />
-        <Item Amount="7500" TypeId="Ingot" SubtypeId="Magnesium" />
-        <Item Amount="100" TypeId="Ingot" SubtypeId="Cobalt" />
-        <Item Amount="1000" TypeId="Ingot" SubtypeId="Nickel" />
-        <Item Amount="500" TypeId="Ingot" SubtypeId="Silicon" />
-        <Item Amount="300" TypeId="Ingot" SubtypeId="Uranium" />
+        <Item Amount="5" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="3.5" TypeId="Ingot" SubtypeId="Magnesium" />
+        <Item Amount="1" TypeId="Ingot" SubtypeId="Cobalt" />
+        <Item Amount="15" TypeId="Ingot" SubtypeId="Uranium" />
       </Prerequisites>
       <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="RedAmmoMagDef" />
-      <BaseProductionTimeInSeconds>40</BaseProductionTimeInSeconds>
+      <BaseProductionTimeInSeconds>3</BaseProductionTimeInSeconds>
 	  
     </Blueprint>
 
