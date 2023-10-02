@@ -476,7 +476,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 3.5f,
-                    Damage = 4500,
+                    Damage = 5501,
                     Depth = 0f,
                     MaxAbsorb = 0f,
                     Falloff = InvCurve, //.NoFalloff applies the same damage to all blocks in radius
@@ -1515,7 +1515,7 @@ namespace Scripts
                 TargetLossDegree = 45f,
                 TargetLossTime = 120, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 1000, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AccelPerSec = 200f,
+                AccelPerSec = 400f,
                 DesiredSpeed = 100,
                 MaxTrajectory = 4000f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)

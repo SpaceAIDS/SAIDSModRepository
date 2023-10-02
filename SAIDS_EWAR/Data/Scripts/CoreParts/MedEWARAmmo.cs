@@ -156,7 +156,7 @@ namespace Scripts
                 Mode = Effect, // Effect , Field
                 Strength = 100f,
                 Radius = 1f, // Meters
-                Duration = 10, // In Ticks
+                Duration = 30, // In Ticks
                 StackDuration = false, // Combined Durations
                 Depletable = true,
                 MaxStacks = 10, // Max Debuffs at once

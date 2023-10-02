@@ -185,7 +185,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                Quake, Tremor, 
+                Quake, Tremor, PhasedPlasma
                  // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = CoilgunAnim,
