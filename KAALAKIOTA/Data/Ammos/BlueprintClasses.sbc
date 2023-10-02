@@ -12,5 +12,8 @@
 		<Entry Class="EliteConsumables" BlueprintSubtypeId="SAIDSRedBP" />	
 		<Entry Class="EliteConsumables" BlueprintSubtypeId="SAIDSGreenBP" />
 		<Entry Class="EliteConsumables" BlueprintSubtypeId="SAIDSPurpleBP" />
+      <Entry Class="EliteConsumables" BlueprintSubtypeId="AWE_ElectromagnetBP" />
+      <Entry Class="EliteConsumables" BlueprintSubtypeId="AWE_MilitaryPlateBP" />
+      <Entry Class="EliteConsumables" BlueprintSubtypeId="AWE_SuperchargerBP" />
    </BlueprintClassEntries>
 </Definitions>
