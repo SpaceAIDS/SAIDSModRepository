@@ -476,7 +476,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 3.5f,
-                    Damage = 5500,
+                    Damage = 5501,
                     Depth = 0f,
                     MaxAbsorb = 0f,
                     Falloff = InvCurve, //.NoFalloff applies the same damage to all blocks in radius
