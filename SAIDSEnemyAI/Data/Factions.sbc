@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Factions>
+  
+    <Faction Tag="GUR" Founder="Guristas Pirates">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Guristas</SubtypeId>
+      </Id>
+      <DisplayName>Guristas Pirates</DisplayName>
+      <IsDefault>true</IsDefault>
+      <Type>Miner</Type>
+	  <DefaultRelation>Enemies</DefaultRelation>
+	  <AcceptHumans>false</AcceptHumans>
+      <AutoAcceptMember>false</AutoAcceptMember>
+    </Faction>
+
+	
+  </Factions>
+</Definitions>
