@@ -7,7 +7,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>SCZoneOutAction</SubtypeId>
+          <SubtypeId>SAIDSZoneOutAction</SubtypeId>
       </Id>
       <Description>
 
@@ -18,7 +18,7 @@
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
         [AddWaypoints:true]
-        [WaypointsToAdd:SCCenterWaypoint]
+        [WaypointsToAdd:SAIDSCenterWaypoint]
         [SwitchToNextWaypoint:true]
 
 
@@ -33,7 +33,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SCInsideZoneAction</SubtypeId>
+        <SubtypeId>SAIDSInsideZoneAction</SubtypeId>
       </Id>
       <Description>
 
@@ -74,7 +74,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SCHealthCheckAction1</SubtypeId>
+        <SubtypeId>SAIDSHealthCheckAction1</SubtypeId>
       </Id>
       <Description>
 
@@ -83,7 +83,7 @@
         [Retreat:false]
 
         [UseChatBroadcast:true]
-        [ChatData:SCHealthCheckAction1Chat]
+        [ChatData:SAIDSHealthCheckAction1Chat]
 
       </Description>
 
@@ -403,7 +403,7 @@ FUCK. You can ignore the requirement with [IgnoreAntennaRequirement:true]. the m
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SCHealthCheckAction1Chat</SubtypeId>
+        <SubtypeId>SAIDSHealthCheckAction1Chat</SubtypeId>
       </Id>
       <Description>
 

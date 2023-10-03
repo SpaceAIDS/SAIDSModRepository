@@ -19,7 +19,7 @@
         [ReplenishSystems:true]
 
 
-        [SpawnConditionsProfiles:SCSpawnCondition1]
+        [SpawnConditionsProfiles:SAIDSSpawnCondition1]
 
 
       </Description>
@@ -34,7 +34,7 @@
             <Z>0.0</Z>
           </Position>
           <Speed>1</Speed>
-          <Behaviour>SCFighter</Behaviour>
+          <Behaviour>SAIDSFighter</Behaviour>
         </Prefab>
       </Prefabs>
     </SpawnGroup>

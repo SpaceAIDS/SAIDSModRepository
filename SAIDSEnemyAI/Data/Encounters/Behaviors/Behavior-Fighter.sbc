@@ -7,7 +7,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SCFighter</SubtypeId>
+        <SubtypeId>SAIDSFighter</SubtypeId>
       </Id>
       <Description>
         [RivalAI Behavior]
@@ -24,7 +24,7 @@
         [Triggers:TakingDamage]
         [Triggers:OutOfZone]
         [Triggers:InsideZone]
-        [Triggers:SCHealthCheck]
+        [Triggers:SAIDSHealthCheck]
         [Triggers:AcquiredTargetTrigger]
         [Triggers:RefreshingTargetTrigger]
         [Triggers:RCCompromisedTrigger]
@@ -41,7 +41,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SCFighterFac2</SubtypeId>
+        <SubtypeId>SAIDSFighterFac2</SubtypeId>
       </Id>
       <Description>
         [RivalAI Behavior]
@@ -57,7 +57,7 @@
         [Triggers:TakingDamage]
         [Triggers:OutOfZone]
         [Triggers:InsideZone]
-        [Triggers:SCHealthCheck]
+        [Triggers:SAIDSHealthCheck]
         [Triggers:AcquiredTargetTrigger]
         [Triggers:RefreshingTargetTrigger]
         [Triggers:RCCompromisedTrigger]
@@ -75,7 +75,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SCFighterRammer</SubtypeId>
+        <SubtypeId>SAIDSFighterRammer</SubtypeId>
       </Id>
       <Description>
         [RivalAI Behavior]
@@ -91,7 +91,7 @@
         [Triggers:TakingDamage]
         [Triggers:OutOfZone]
         [Triggers:InsideZone]
-        [Triggers:SCHealthCheck]
+        [Triggers:SAIDSHealthCheck]
         [Triggers:AcquiredTargetTrigger]
         [Triggers:RCCompromisedTrigger]
         [Triggers:RamConstantlyTrigger]
@@ -107,7 +107,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SCFighterRammerGD</SubtypeId>
+        <SubtypeId>SAIDSFighterRammerGD</SubtypeId>
       </Id>
       <Description>
         [RivalAI Behavior]
@@ -123,7 +123,7 @@
         [Triggers:TakingDamage]
         [Triggers:OutOfZone]
         [Triggers:InsideZone]
-        [Triggers:SCHealthCheck]
+        [Triggers:SAIDSHealthCheck]
         [Triggers:AcquiredTargetTrigger]
         [Triggers:GreatDyingDeadTrigger]
         [Triggers:ForceFireTrigger]

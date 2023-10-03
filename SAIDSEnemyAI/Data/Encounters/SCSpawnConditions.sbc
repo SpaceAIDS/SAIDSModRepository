@@ -12,7 +12,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SCSpawnCondition1</SubtypeId>
+        <SubtypeId>SAIDSSpawnCondition1</SubtypeId>
       </Id>
       <Description>
 
@@ -20,6 +20,8 @@
 
         [SpaceCargoShip:true]
         [FactionOwner:GUR]
+        [SkipGridSpawnChecks:true]
+        [SkipVoxelSpawnChecks:true]
 
 
 
