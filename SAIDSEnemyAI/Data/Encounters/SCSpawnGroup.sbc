@@ -3,7 +3,7 @@
 	<SpawnGroups>
 	<!--Do Not Edit Above Here-->
 
-    <!--FACTION 1-->
+    <!--GURISTAS-->
     
     <SpawnGroup>
       <Id>
@@ -41,6 +41,41 @@
       </Prefabs>
     </SpawnGroup>
 
+    <SpawnGroup>
+      <Id>
+        <TypeId>SpawnGroupDefinition</TypeId>
+        <!--Do Not Edit-->
+        <SubtypeId>SpawnGuristasBattleship</SubtypeId>
+      </Id>
+      <Description>
+
+        [Modular Encounters SpawnGroup]
+
+        [SpaceCargoShip:true]
+        [UseRivalAi:true]
+        [RivalAiReplaceRemoteControl:true]
+        [ReplenishSystems:true]
+
+
+        [SpawnConditionsProfiles:SAIDSSpawnCondition1]
+
+
+      </Description>
+      <IsPirate>true</IsPirate>
+      <!--Do not edit-->
+      <Frequency>5.0</Frequency>
+      <Prefabs>
+        <Prefab SubtypeId="Pith Conquistador">
+          <Position>
+            <X>0.0</X>
+            <Y>0.0</Y>
+            <Z>0.0</Z>
+          </Position>
+          <Speed>1</Speed>
+          <Behaviour>SAIDSFighter</Behaviour>
+        </Prefab>
+      </Prefabs>
+    </SpawnGroup>
 
 
     <!--Do Not Edit Below Here-->

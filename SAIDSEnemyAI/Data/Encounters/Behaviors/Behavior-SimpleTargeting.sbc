@@ -13,28 +13,23 @@
       <Description>
 
         [RivalAI Target]
-
         [UseCustomTargeting:true]
-        [Target:Grid]
-
+        [Target:PlayerAndGrid]
+        [UseTargetRefresh:false]
+        [TimeUntilNextRefresh:60]
+        [TimeUntilNextEvaluation:15]
         [MaxDistance:20000]
-
-        [MatchAllFilters:OutsideOfSafezone]
-        [MatchAllFilters:Owner]
-        [MatchAllFilters:Powered]
-        [MatchAllFilters:Faction]
-        [MatchAllFilters:PlayerControlled]
-        [PrioritizePlayerControlled:true]
-        [MatchAllFilters:Static]
-        [IsStatic:No]
+        [MaxExistingTargetDistance:5000]
         [GetTargetBy:ClosestDistance]
-
-        [Owners:Player]
-        [Owners:NPC]
-        [FactionTargets:AI2]
-        [FactionTargets:NEU]
-
-
+        [MatchAllFilters:Relation]
+        [MatchAllFilters:OutsideOfSafezone]
+        [MatchAllFilters:TargetValue]
+        [MatchAllFilters:PlayerControlled]
+        [MatchAllFilters:Powered]
+        [Relations:Enemy]
+        [MinTargetValue:10]
+        [MaxTargetValue:999999]
+        [PrioritizePlayerControlled:true]
       </Description>
       
     </EntityComponent>

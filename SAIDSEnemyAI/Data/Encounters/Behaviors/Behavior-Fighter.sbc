@@ -19,11 +19,8 @@
         [TargetData:Base20kTarget]
         [AutopilotData:BasicAutopilot]
         [SecondaryAutopilotData:CowardBasicAutopilot]
-        [TertiaryAutopilotData:GETTHEFUCKBACKAutopilot]
 
         [Triggers:TakingDamage]
-        [Triggers:OutOfZone]
-        [Triggers:InsideZone]
         [Triggers:SAIDSHealthCheck]
         [Triggers:AcquiredTargetTrigger]
         [Triggers:RefreshingTargetTrigger]
@@ -52,11 +49,9 @@
         [TargetData:Base20kTargetTwo]
         [AutopilotData:BasicAutopilot]
         [SecondaryAutopilotData:CowardBasicAutopilot]
-        [TertiaryAutopilotData:GETTHEFUCKBACKAutopilot]
+
 
         [Triggers:TakingDamage]
-        [Triggers:OutOfZone]
-        [Triggers:InsideZone]
         [Triggers:SAIDSHealthCheck]
         [Triggers:AcquiredTargetTrigger]
         [Triggers:RefreshingTargetTrigger]
@@ -86,11 +81,7 @@
         [TargetData:Base20kTarget]
         [AutopilotData:BasicAutopilot]
 
-        [TertiaryAutopilotData:GETTHEFUCKBACKAutopilot]
-
         [Triggers:TakingDamage]
-        [Triggers:OutOfZone]
-        [Triggers:InsideZone]
         [Triggers:SAIDSHealthCheck]
         [Triggers:AcquiredTargetTrigger]
         [Triggers:RCCompromisedTrigger]
@@ -103,39 +94,6 @@
 
       </Description>
     </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>SAIDSFighterRammerGD</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Behavior]
-        [BehaviorName:Fighter]
-
-
-
-        [TargetData:Base20kTarget]
-        [AutopilotData:BasicAutopilot]
-
-        [TertiaryAutopilotData:GETTHEFUCKBACKAutopilot]
-
-        [Triggers:TakingDamage]
-        [Triggers:OutOfZone]
-        [Triggers:InsideZone]
-        [Triggers:SAIDSHealthCheck]
-        [Triggers:AcquiredTargetTrigger]
-        [Triggers:GreatDyingDeadTrigger]
-        [Triggers:ForceFireTrigger]
-        [Triggers:RamConstantlyTrigger]
-        [Triggers:CloseRangeAttackTrigger]
-
-        [WeaponSystem:Weapon1]
-
-
-      </Description>
-    </EntityComponent>
-    
 
     <!--HorseFighter behavior. If X is true, will become a fighter and strafe. X can be done with triggers, but i got it working on a timer. 
 	 for 10 seconds it will "approach" i.e. make waypoints around the target. The waypoint distance is done with the offsets.
