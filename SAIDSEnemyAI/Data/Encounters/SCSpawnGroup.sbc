@@ -14,6 +14,8 @@
       <Description>
 
         [Modular Encounters SpawnGroup]
+        
+        [SpaceCargoShip:true]
         [UseRivalAi:true]
         [RivalAiReplaceRemoteControl:true]
         [ReplenishSystems:true]

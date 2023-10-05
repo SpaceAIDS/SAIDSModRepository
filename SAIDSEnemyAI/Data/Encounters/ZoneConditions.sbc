@@ -11,38 +11,21 @@
     Then within the Spawn Condition profile you need to have a Zone Condition which
     then points to a Zone.-->
 
-
-    <!--what is my purpose?
-    you spawn a big radius sphere at 0,0-->
-    
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>SAIDSZone1</SubtypeId>
+        <SubtypeId>SAIDSZoneCondition1</SubtypeId>
       </Id>
       <Description>
 
-        [MES Zone]
+        [MES Zone Conditions]
 
-        [PublicName:UNKNOWNSPACE]
-
-        [Active:true]
-        [Persistent:true]
-        [Strict:true]
-
-
-
-        [UseZoneAnnounce:true]
-
-        [ZoneEnterAnnounce:You've entered Unknown Space]
-        [ZoneLeaveAnnounce:You've left Unknown Space]
-
-        [Coordinates:{X:0 Y:0 Z:0}]
-        [Radius:1000000]
+        [ZoneName:UNKNOWNSPACE]
 
       </Description>
 
-    </EntityComponent>    
+    </EntityComponent>
+
     
     
   </EntityComponents>

@@ -9,7 +9,7 @@
       </Id>
       <DisplayName>Guristas Pirates</DisplayName>
       <IsDefault>true</IsDefault>
-      <Type>Miner</Type>
+      <Type>None</Type>
 	  <DefaultRelation>Enemies</DefaultRelation>
 	  <AcceptHumans>false</AcceptHumans>
       <AutoAcceptMember>false</AutoAcceptMember>
