@@ -26,6 +26,8 @@
         [SkipAirDensityCheck:true]
         [SkipVoxelSpawnChecks:true]
         [SkipGridSpawnChecks:true]
+        [MinGravity:0]
+        [MinGravity:10]
 
         [ZoneConditions:SAIDSZoneCondition1]
 
