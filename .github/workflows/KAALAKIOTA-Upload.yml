@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: AnarkisGaming/workshop@v1
         with:
-          appID: 3035615398
-          publishedFileID: CHANGEME
+          appID: 244850
+          publishedFileID: 3035615398
           path: KAALAKIOTA
           changelog: ${{ github.event.head_commit.message }}              
         env:

@@ -57,7 +57,7 @@ namespace ServerMod
                 SpecBlockHooks.OnSpecBlockChanged -= OnSpecBlockChanged;
 
                 //RunUpgrades(specBlock, grids);
-            }  
+            }
             /*else
             {
                 MyAPIGateway.Parallel.StartBackground(() =>
@@ -66,7 +66,7 @@ namespace ServerMod
                     MyAPIGateway.Parallel.Sleep(5000);
                     RunUpgrades(specBlock, grids);
                 });
-            }*/    
+            }*/
         }
 
         private static void RunUpgrades(object specBlock, List<IMyCubeGrid> grids, bool reset = false)
@@ -218,27 +218,21 @@ namespace ServerMod
 
             if (thrustBlock != null)
             {
-                if (stats.ContainsKey(46) && stats[46] != 0)
+                if (stats != null && stats.ContainsKey(46) && stats[46] != 0)
                 {
                     thrustBlock.ThrustMultiplier = stats[46];
-                }
-                else
-                {
-                    thrustBlock.ThrustMultiplier = 1.0f;
-                }
-                if (stats.ContainsKey(46) && stats[46] != 0)
-                {
                     thrustBlock.PowerConsumptionMultiplier = 1 / stats[46];
                 }
                 else
                 {
+                    thrustBlock.ThrustMultiplier = 1.0f;
                     thrustBlock.PowerConsumptionMultiplier = 1.0f;
                 }
             }
 
             if (reactorBlock != null)
             {
-                if (stats.ContainsKey(28) && stats[28] != 0)
+                if (stats != null && stats.ContainsKey(28) && stats[28] != 0)
                 {
                     reactorBlock.PowerOutputMultiplier = stats[28];
                 }
@@ -246,46 +240,37 @@ namespace ServerMod
                 {
                     reactorBlock.PowerOutputMultiplier = 1.0f;
                 }
-                //MyLog.Default.WriteLineAndConsole($"Reactor upgraded - {reactorBlock.PowerOutputMultiplier}");
-                //Log.ChatError($"SetMultiplier to: {reactorBlock.PowerOutputMultiplier}");
             }
 
             if (gyroBlock != null)
             {
-                if (stats.ContainsKey(28) && stats[28] != 0)
+                if (stats != null && stats.ContainsKey(28) && stats[28] != 0)
                 {
                     gyroBlock.PowerConsumptionMultiplier = 1 / MathHelper.Max(1, stats[28]);
-                    //gyroBlock.GyroStrengthMultiplier = stats[28];
                 }
                 else
                 {
                     gyroBlock.PowerConsumptionMultiplier = 1.0f;
-                    //gyroBlock.GyroStrengthMultiplier = 1.0f;
                 }
-                //Log.ChatError($"SetMultiplier to: {gyroBlock.PowerConsumptionMultiplier}");
             }
-
 
             if (generatorBlock != null)
             {
-                if (stats.ContainsKey(29) && stats[29] != 0)
+                if (stats != null && stats.ContainsKey(29) && stats[29] != 0)
                 {
-                    //This is the rate of ice consumption, NOT the rate of O2/H2 output
                     generatorBlock.ProductionCapacityMultiplier = stats[29];
                     generatorBlock.PowerConsumptionMultiplier = stats[29] / MathHelper.Max(1, stats[28]);
                 }
                 else
                 {
-                    //This is the rate of ice consumption, NOT the rate of O2/H2 output
                     generatorBlock.ProductionCapacityMultiplier = 1.0f;
                     generatorBlock.PowerConsumptionMultiplier = 1.0f;
                 }
-               //Log.ChatError($"SetMultiplier to: {generatorBlock.ProductionCapacityMultiplier}");
             }
 
             if (drillBlock != null)
             {
-                if (stats.ContainsKey(27) && stats[27] != 0)
+                if (stats != null && stats.ContainsKey(27) && stats[27] != 0)
                 {
                     drillBlock.DrillHarvestMultiplier = stats[27];
                     drillBlock.PowerConsumptionMultiplier = 1 / stats[27];
@@ -295,7 +280,6 @@ namespace ServerMod
                     drillBlock.DrillHarvestMultiplier = 1.0f;
                     drillBlock.PowerConsumptionMultiplier = 1.0f;
                 }
-                //Log.ChatError($"SetMultiplier to: {drillBlock.DrillHarvestMultiplier}");
             }
         }
         //This doesnt seem to work when expected, not sure why, is this even needed?
@@ -319,7 +303,7 @@ namespace ServerMod
                     });
                 }
             });*/
-            
+
             if (!allowOnLimitedBlockCreated && isServer)
             {
                 limitedBlocksToProcess.Add(limitedBlock);
@@ -342,7 +326,7 @@ namespace ServerMod
             {
                 MyAPIGateway.Parallel.Sleep(5000);
                 MyAPIGateway.Utilities.InvokeOnGameThread(() => { UpgradeBlock(limitedBlock); });
-                
+
             });
         }
 
@@ -355,7 +339,7 @@ namespace ServerMod
             IMyCubeGrid grid = tBlock.CubeGrid;
             List<IMyCubeGrid> grids = new List<IMyCubeGrid>();
             MyAPIGateway.GridGroups.GetGroup(grid, GridLinkTypeEnum.Mechanical, grids);
-            RunUpgrades(specBlock, grids, true);   
+            RunUpgrades(specBlock, grids, true);
         }
 
         /*public static void MessageHandler(byte[] data)
