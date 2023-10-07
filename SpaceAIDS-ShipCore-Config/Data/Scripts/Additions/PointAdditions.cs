@@ -170,6 +170,11 @@ namespace ShipPoints
 				AryxRCSHalfRamp@5;
 				AryxRCSRamp@5;
 
+
+				HeavyAssaultMissileLauncher@600;
+
+
+
 			"));
         }
     }
