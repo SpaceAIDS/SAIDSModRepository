@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 using Sandbox.Game.EntityComponents;
 using Sandbox.ModAPI;
 using Sandbox.Common.ObjectBuilders;
@@ -31,7 +28,7 @@ namespace PowerOverride
             {
                 exampleBlock = (IMyShipDrill)Entity;
 
-                if (exampleBlock.CubeGrid?.Physics == null)
+                if (exampleBlock?.CubeGrid?.Physics == null)
                     return;
 
                 Sink = exampleBlock.Components.Get<MyResourceSinkComponent>();
@@ -50,39 +47,35 @@ namespace PowerOverride
         {
             try
             {
-                if (exampleBlock.Enabled)
+                if (exampleBlock == null || !exampleBlock.Enabled)
+                    return;
+
+                float availableGridPower = CalculateMaxAvailableGridPower();
+
+                if (availableGridPower < 300.000f)
                 {
-                    // Calculate the available power of the entire grid.
-                    float availableGridPower = CalculateMaxAvailableGridPower();
+                    exampleBlock.Enabled = false;
 
-                    // If available power is less than 1GW, turn off the block.
-                    if (availableGridPower < 300.000f)
+                    if (!hasNotified)
                     {
-                        exampleBlock.Enabled = false;
-
-                        // Show the notification only once
-                        if (!hasNotified)
-                        {
-                            //MyAPIGateway.Utilities.ShowNotification("Insufficient Power", 1500, "Red"); // Show a notification
-                            hasNotified = true;
-                        }
+                        // MyAPIGateway.Utilities.ShowNotification("Insufficient Power", 1500, "Red");
+                        hasNotified = true;
                     }
-                    else
-                    {
-                        hasNotified = false; // Reset the flag if there's enough power.
-                    }
-
-                    CalculatePowerDraw();
-                    Sink.Update();
                 }
+                else
+                {
+                    hasNotified = false;
+                }
+
+                CalculatePowerDraw();
+                Sink.Update();
             }
             catch (Exception e)
             {
-                //MyAPIGateway.Utilities.ShowNotification($"{e}", 5000, "Red");
+                // MyAPIGateway.Utilities.ShowNotification($"{e}", 5000, "Red");
             }
         }
 
-        // Method to calculate the available power for the grid, similar to your example.
         private float CalculateMaxAvailableGridPower()
         {
             float totalPower = 0f;
@@ -109,17 +102,22 @@ namespace PowerOverride
                 if (exampleBlock == null)
                     return;
 
-
                 exampleBlock = null;
             }
             catch (Exception e)
             {
-               // MyAPIGateway.Utilities.ShowNotification($"{e}", 5000, "Red");
+                // MyAPIGateway.Utilities.ShowNotification($"{e}", 5000, "Red");
             }
         }
 
         private float CalculatePowerDraw()
         {
+            // Null check for exampleBlock
+            if (exampleBlock == null)
+            {
+                return 0f;
+            }
+
             if (!exampleBlock.Enabled)
             {
                 return 0f;
